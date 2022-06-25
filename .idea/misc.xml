@@ -3,7 +3,13 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
-        <entry key="..\:/dev/TodayHouse/app/src/main/res/layout/activity_login.xml" value="0.25364583333333335" />
+        <entry key="..\:/dev/TodayHouse/app/src/main/res/drawable/login_apple_bg.xml" value="0.2445" />
+        <entry key="..\:/dev/TodayHouse/app/src/main/res/drawable/login_banner_bg.xml" value="0.2445" />
+        <entry key="..\:/dev/TodayHouse/app/src/main/res/drawable/login_banner_tail_bg.xml" value="0.2445" />
+        <entry key="..\:/dev/TodayHouse/app/src/main/res/drawable/login_facebook_bg.xml" value="0.2445" />
+        <entry key="..\:/dev/TodayHouse/app/src/main/res/drawable/login_kakao_bg.xml" value="0.2445" />
+        <entry key="..\:/dev/TodayHouse/app/src/main/res/drawable/login_naver_bg.xml" value="0.2445" />
+        <entry key="..\:/dev/TodayHouse/app/src/main/res/layout/activity_login.xml" value="0.2" />
         <entry key="..\:/dev/TodayHouse/app/src/main/res/layout/activity_splash.xml" value="0.25364583333333335" />
       </map>
     </option>

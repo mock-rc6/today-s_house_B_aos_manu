@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<anroidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -20,6 +20,233 @@
         app:layout_constraintTop_toTopOf="parent"
         android:layout_marginTop="150dp"/>
 
+    <TextView
+        android:id="@+id/login_down_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="쿠폰 증정!"
+        android:textSize="22dp"
+        android:textColor="@color/black"
+        android:fontFamily="@font/today_hose_onday_medium"
+        app:layout_constraintStart_toStartOf="@+id/login_top_text"
+        app:layout_constraintEnd_toEndOf="@+id/login_top_text"
+        app:layout_constraintTop_toBottomOf="@+id/login_top_text"
+        android:layout_marginTop="8dp"/>
+    
+    
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/kakao_talk_login"
+        android:layout_width="330dp"
+        android:layout_height="50dp"
+        android:background="@drawable/login_kakao_bg"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <ImageView
+            android:id="@+id/kakao_talk_logo"
+            android:layout_width="30dp"
+            android:layout_height="wrap_content"
+            android:src="@drawable/kakaotalk_logo"
+            app:layout_constraintEnd_toStartOf="@+id/kakao_talk_text"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            android:layout_marginLeft="46dp"/>
 
 
-</anroidx.constraintlayout.widget.ConstraintLayout>
+        <TextView
+            android:id="@+id/kakao_talk_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="카카오톡으로 계속하기"
+            android:textSize="14dp"
+            android:textColor="@color/black"
+            android:fontFamily="@font/today_hose_onday_medium"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginLeft="30dp"/>
+
+
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+    <FrameLayout
+        android:id="@+id/login_facebook"
+        android:layout_width="65dp"
+        android:layout_height="65dp"
+        android:background="@drawable/login_facebook_bg"
+        app:layout_constraintTop_toBottomOf="@+id/kakao_talk_login"
+        app:layout_constraintStart_toStartOf="@id/kakao_talk_login"
+        app:layout_constraintEnd_toEndOf="@id/kakao_talk_login"
+        android:layout_marginTop="40dp">
+
+        <ImageView
+            android:id="@+id/facebook_logo_img"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_gravity="center"
+            android:src="@drawable/facebook_logo"
+            android:clipToOutline="true"
+            android:layout_marginRight="1dp"
+            android:padding="7dp"/>
+
+    </FrameLayout>
+
+    <FrameLayout
+        android:id="@+id/login_naver"
+        android:layout_width="65dp"
+        android:layout_height="65dp"
+        android:background="@drawable/login_naver_bg"
+        app:layout_constraintTop_toBottomOf="@+id/kakao_talk_login"
+        app:layout_constraintEnd_toStartOf="@id/login_facebook"
+        app:layout_constraintStart_toStartOf="@id/kakao_talk_login"
+        android:layout_marginTop="40dp"
+        android:layout_marginLeft="20dp">
+
+        <ImageView
+            android:id="@+id/facebook_naver_img"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_gravity="center"
+            android:src="@drawable/naver_logo"
+            android:clipToOutline="true"
+            android:layout_marginRight="1dp"/>
+
+    </FrameLayout>
+
+    <FrameLayout
+        android:id="@+id/apple_login"
+        android:layout_width="65dp"
+        android:layout_height="65dp"
+        android:background="@drawable/login_apple_bg"
+        app:layout_constraintTop_toBottomOf="@+id/kakao_talk_login"
+        app:layout_constraintStart_toEndOf="@id/login_facebook"
+        app:layout_constraintEnd_toEndOf="@id/kakao_talk_login"
+        android:layout_marginTop="40dp"
+        android:layout_marginRight="20dp">
+
+        <ImageView
+            android:id="@+id/facebook_apple_img"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_gravity="center"
+            android:src="@drawable/apple_logo"
+            android:clipToOutline="true"
+            android:layout_marginRight="1dp"
+            android:padding="8dp" />
+
+    </FrameLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="190dp"
+        android:layout_height="50dp"
+        android:background="@color/white"
+        app:layout_constraintBottom_toTopOf="@id/kakao_talk_login"
+        app:layout_constraintStart_toStartOf="@id/kakao_talk_login"
+        app:layout_constraintEnd_toEndOf="@id/kakao_talk_login">
+
+        <ImageView
+            android:id="@+id/login_speech_ballon"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:src="@drawable/login_speech_ballon_img"
+            android:scaleType="fitXY"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"/>
+
+        <ImageView
+            android:id="@+id/login_lighting_img"
+            android:layout_width="25dp"
+            android:layout_height="25dp"
+            android:src="@drawable/login_lighting_img"
+            app:layout_constraintTop_toTopOf="@+id/login_speech_ballon"
+            app:layout_constraintBottom_toBottomOf="@+id/login_speech_ballon"
+            app:layout_constraintStart_toStartOf="@+id/login_speech_ballon"
+            android:layout_marginLeft="15dp"
+            android:layout_marginBottom="10dp"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="3초만에 빠른 회원가입"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/login_lighting_img"
+            android:layout_marginBottom="8dp"
+            android:textColor="@color/black"
+            android:fontFamily="@font/today_house_today_medium"/>
+
+
+
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+    <TextView
+        android:id="@+id/email_login"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="@id/login_naver"
+        app:layout_constraintTop_toBottomOf="@+id/login_naver"
+        android:text="@string/email_login"
+        android:layout_marginTop="45dp"
+        android:textColor="@color/black"
+        android:fontFamily="@font/today_hose_onday_medium"
+        android:textSize="17dp"/>
+
+    <TextView
+        android:id="@+id/email_signup"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="@id/apple_login"
+        app:layout_constraintTop_toBottomOf="@+id/login_naver"
+        android:text="@string/email_signup"
+        android:layout_marginTop="45dp"
+        android:textColor="@color/black"
+        android:fontFamily="@font/today_hose_onday_medium"
+        android:textSize="17dp"/>
+
+    <View
+        android:layout_width="1dp"
+        android:layout_height="15dp"
+        android:background="@color/light_grey"
+        app:layout_constraintStart_toEndOf="@+id/email_login"
+        app:layout_constraintEnd_toStartOf="@id/email_signup"
+        app:layout_constraintTop_toTopOf="@+id/email_login"
+        app:layout_constraintBottom_toBottomOf="@id/email_signup"/>
+
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="17dp"
+        android:textColor="@color/light_grey"
+        android:text="로그인에 문제가 있으신가요?"
+        app:layout_constraintStart_toStartOf="@+id/email_login"
+        app:layout_constraintEnd_toEndOf="@+id/email_signup"
+        app:layout_constraintTop_toBottomOf="@+id/email_login"
+        android:layout_marginTop="35dp" />
+
+
+    <TextView
+        android:id="@+id/not_login_order_find"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@color/grey"
+        android:text="비회원 주문 조회하기"
+        android:textSize="17dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginBottom="20dp"/>
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
