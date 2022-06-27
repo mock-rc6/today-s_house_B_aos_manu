@@ -1,4 +1,4 @@
-package com.manu.todayhouse.src.signup
+package com.manu.todayhouse.src.login.signup
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle

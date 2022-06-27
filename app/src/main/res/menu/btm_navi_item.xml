@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/home_btn"
+        android:enabled="true"
+        android:icon="@drawable/btm_navi_homebtn_01"
+        android:title="홈"/>
+
+    <item
+        android:id="@+id/discount_res_btn"
+        android:enabled="true"
+        android:icon="@drawable/btm_navigation_bar_02"
+        android:title="스토어"/>
+
+
+
+    <item
+        android:id="@+id/notice_res_btn"
+        android:enabled="true"
+        android:icon="@drawable/btm_navigation_bar_03"
+        android:title="홈서비스"/>
+
+    <item
+        android:id="@+id/mypage_res_btn"
+        android:enabled="true"
+        android:icon="@drawable/btm_navigation_bar_04"
+        android:title="마이페이지"/>
+    <item
+        android:enabled="true"
+        android:title=""/>
+
+</menu>

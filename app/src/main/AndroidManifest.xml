@@ -3,6 +3,9 @@
     xmlns:tools="http://schemas.android.com/tools"
     package="com.manu.todayhouse" >
 
+    <uses-sdk tools:overrideLibrary="com.kakao.sdk:v2-user:2.10.0" />
+    <uses-permission android:name="android.permission.INTERNET"/>
+
     <application
         android:name=".config.ApplicationClass"
         android:allowBackup="true"
@@ -15,11 +18,25 @@
         android:theme="@style/Theme.TodayHouse"
         tools:targetApi="31" >
         <activity
-            android:name=".src.signup.SignUpActivity"
+            android:name=".src.login.signup.SignUpActivity"
             android:exported="false" />
         <activity
             android:name=".src.login.LoginActivity"
             android:exported="false" />
+        <activity
+            android:name="com.kakao.sdk.auth.AuthCodeHandlerActivity"
+            android:exported="true">
+        <intent-filter>
+            <action android:name="android.intent.action.VIEW" />
+
+            <category android:name="android.intent.category.DEFAULT" />
+            <category android:name="android.intent.category.BROWSABLE" />
+
+            <data
+                android:host="oauth"
+                android:scheme="kakao34c8ef422aff7c99d323b0cb931a3cee" />
+        </intent-filter>
+        </activity>
         <activity
             android:name=".src.MainActivity"
             android:exported="false" />
@@ -33,5 +50,9 @@
             </intent-filter>
         </activity>
     </application>
+
+    <meta-data
+        android:name="com.kakao.sdk.AppKey"
+        android:value="34c8ef422aff7c99d323b0cb931a3cee" />
 
 </manifest>

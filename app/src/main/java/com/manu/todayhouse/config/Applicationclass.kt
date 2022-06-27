@@ -3,6 +3,8 @@ package com.manu.todayhouse.config
 import android.app.Application
 import android.content.SharedPreferences
 import android.util.Log
+import com.kakao.sdk.common.KakaoSdk
+import com.manu.todayhouse.BuildConfig
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
 import retrofit2.Retrofit
@@ -37,6 +39,8 @@ class ApplicationClass : Application() {
             applicationContext.getSharedPreferences("SOFTSQUARED_TEMPLATE_APP", MODE_PRIVATE)
         // 레트로핏 인스턴스 생성
         initRetrofitInstance()
+
+        KakaoSdk.init(this, "34c8ef422aff7c99d323b0cb931a3cee")
 
 
 
