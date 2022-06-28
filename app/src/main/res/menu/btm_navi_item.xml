@@ -8,7 +8,7 @@
         android:title="홈"/>
 
     <item
-        android:id="@+id/discount_res_btn"
+        android:id="@+id/store_btn"
         android:enabled="true"
         android:icon="@drawable/btm_navigation_bar_02"
         android:title="스토어"/>
@@ -16,13 +16,13 @@
 
 
     <item
-        android:id="@+id/notice_res_btn"
+        android:id="@+id/home_service_btn"
         android:enabled="true"
         android:icon="@drawable/btm_navigation_bar_03"
         android:title="홈서비스"/>
 
     <item
-        android:id="@+id/mypage_res_btn"
+        android:id="@+id/mypage_btn"
         android:enabled="true"
         android:icon="@drawable/btm_navigation_bar_04"
         android:title="마이페이지"/>

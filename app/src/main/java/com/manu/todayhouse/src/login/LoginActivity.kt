@@ -9,6 +9,7 @@ import com.kakao.sdk.auth.model.OAuthToken
 import com.kakao.sdk.common.model.AuthErrorCause
 import com.kakao.sdk.common.util.Utility
 
+
 import com.manu.todayhouse.config.BaseActivity
 import com.manu.todayhouse.databinding.ActivityLoginBinding
 import com.manu.todayhouse.src.MainActivity
@@ -19,6 +20,11 @@ class LoginActivity : BaseActivity<ActivityLoginBinding>(ActivityLoginBinding::i
         super.onCreate(savedInstanceState)
 
         binding.facebookLogoImg.clipToOutline = true
+
+        binding.loginNaver.setOnClickListener {
+            val intent = Intent(this@LoginActivity, MainActivity::class.java)
+            startActivity(intent)
+        }
 
         val keyHash = Utility.getKeyHash(this)
         Log.d("hash", keyHash)

@@ -6,7 +6,15 @@
     android:layout_height="match_parent"
     tools:context=".src.MainActivity">
 
+    <FrameLayout
+        android:id="@+id/btm_frg_view"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"/>
+
     <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/main_btm_navigation"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -20,6 +28,15 @@
         app:itemTextColor="@color/btm_icon_check_color"
         android:textAlignment="center"
         app:itemRippleColor="@android:color/transparent">
+
+        <ImageView
+            android:id="@+id/main_btm_plus_button"
+            android:layout_width="70dp"
+            android:layout_height="wrap_content"
+            android:src="@drawable/btm_navi_homebtn_05"
+            android:layout_gravity="end"
+            android:layout_marginEnd="10dp"
+            android:layout_marginBottom="5dp"/>
 
 
 
