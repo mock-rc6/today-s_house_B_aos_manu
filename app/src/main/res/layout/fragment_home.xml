@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".src.main.home.HomeFragment">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/search_container"
+        android:layout_width="280dp"
+        android:layout_height="35dp"
+        android:background="@drawable/home_search_bg"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginLeft="18dp"
+        android:layout_marginTop="10dp">
+
+
+        <ImageView
+            android:id="@+id/search_icon"
+            android:layout_width="22dp"
+            android:layout_height="22dp"
+            android:src="@drawable/search_icon_home"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            android:layout_marginLeft="10dp"/>
+
+        <EditText
+            android:layout_width="240dp"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="6dp"
+            android:background="@android:color/transparent"
+            android:hint="오늘의집 통합겁색"
+            android:textColorHint="@color/light_grey"
+            android:textSize="16dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/search_icon"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:ignore="TouchTargetSizeCheck" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <ImageView
+        android:id="@+id/home_tag_btn"
+        android:layout_width="32dp"
+        android:layout_height="32dp"
+        android:src="@drawable/home_tag_btn"
+        app:layout_constraintStart_toEndOf="@+id/search_container"
+        app:layout_constraintTop_toTopOf="@+id/search_container"
+        app:layout_constraintBottom_toBottomOf="@+id/search_container"
+        android:layout_marginLeft="20dp"/>
+
+    <ImageView
+        android:layout_width="32dp"
+        android:layout_height="32dp"
+        android:src="@drawable/home_buket_btn"
+        app:layout_constraintStart_toEndOf="@+id/home_tag_btn"
+        app:layout_constraintTop_toTopOf="@+id/search_container"
+        app:layout_constraintBottom_toBottomOf="@+id/search_container"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginRight="5dp"/>
+
+
+
+        <com.google.android.material.tabs.TabLayout
+            android:id="@+id/home_tab_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@+id/search_container"
+            android:orientation="horizontal"
+            android:overScrollMode="never"
+            app:tabMode="scrollable"
+            app:tabSelectedTextColor="@color/today_house_color"
+            app:tabTextColor="@color/black"
+            app:tabIndicatorColor="@color/today_house_color"
+            app:tabIndicatorHeight="2dp"
+            app:tabTextAppearance="@style/tab_text"
+            app:tabIndicatorFullWidth="false"
+            app:tabRippleColor="@android:color/transparent"
+            app:layout_constraintStart_toStartOf="parent">
+
+            <com.google.android.material.tabs.TabItem
+                android:layout_width="20dp"
+                android:layout_height="wrap_content"
+                android:text="인기"/>
+
+            <com.google.android.material.tabs.TabItem
+                android:layout_width="20dp"
+                android:layout_height="wrap_content"
+                android:text="팔로잉"/>
+
+            <com.google.android.material.tabs.TabItem
+                android:layout_width="20dp"
+                android:layout_height="wrap_content"
+                android:text="사진"/>
+
+            <com.google.android.material.tabs.TabItem
+                android:layout_width="20dp"
+                android:layout_height="wrap_content"
+                android:text="집들이"/>
+
+            <com.google.android.material.tabs.TabItem
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="노하우"/>
+
+            <com.google.android.material.tabs.TabItem
+                android:layout_width="20dp"
+                android:layout_height="wrap_content"
+                android:text="전문가집들이"/>
+
+            <com.google.android.material.tabs.TabItem
+                android:layout_width="20dp"
+                android:layout_height="wrap_content"
+                android:text="질문과 답변"/>
+
+
+
+
+
+
+
+        </com.google.android.material.tabs.TabLayout>
+        
+    <androidx.viewpager2.widget.ViewPager2
+        android:id="@+id/tab_connect_viewpager"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@+id/home_tab_layout"
+        app:layout_constraintStart_toStartOf="parent"
+        android:overScrollMode="never"/>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

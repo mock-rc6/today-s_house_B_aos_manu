@@ -15,7 +15,7 @@
 
     <com.google.android.material.bottomnavigation.BottomNavigationView
         android:id="@+id/main_btm_navigation"
-        android:layout_width="match_parent"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -26,13 +26,14 @@
         app:labelVisibilityMode="labeled"
         app:itemIconTint="@color/btm_icon_check_color"
         app:itemTextColor="@color/btm_icon_check_color"
+        app:itemBackground="@android:color/transparent"
         android:textAlignment="center"
         app:itemRippleColor="@android:color/transparent">
 
         <ImageView
-            android:id="@+id/main_btm_plus_button"
+            android:id="@+id/change_ani_img"
             android:layout_width="70dp"
-            android:layout_height="wrap_content"
+            android:layout_height="match_parent"
             android:src="@drawable/btm_navi_homebtn_05"
             android:layout_gravity="end"
             android:layout_marginEnd="10dp"

@@ -14,6 +14,7 @@
     <color name="grey">#808080</color>
     <color name="light_grey">#6F808080</color>
     <color name="today_house_color">#35c5f0</color>
+    <color name="much_light_grey">#39CACACA</color>
 
 
 </resources>
