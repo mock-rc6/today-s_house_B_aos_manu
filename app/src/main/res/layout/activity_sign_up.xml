@@ -27,6 +27,7 @@
             android:textStyle="bold"/>
 
         <ImageView
+            android:id="@+id/sign_up_back"
             android:layout_width="25dp"
             android:layout_height="25dp"
             android:src="@drawable/sign_up_back_arrow"
