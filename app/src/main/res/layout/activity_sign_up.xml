@@ -76,33 +76,35 @@
 
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:id="@+id/email_container"
-                android:layout_width="330dp"
+                android:layout_width="370dp"
                 android:layout_height="wrap_content"
                 app:layout_constraintTop_toBottomOf="@+id/expert_text"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 android:layout_marginTop="16dp"
+                android:orientation="vertical"
                 android:background="@drawable/sign_up_bg"
                 app:layout_constrainedWidth="true">
 
                 <EditText
                     android:id="@+id/sign_up_input_email"
-                    android:layout_width="330dp"
-                    android:layout_height="40dp"
+                    android:layout_width="360dp"
+                    android:layout_height="50dp"
                     android:background="@android:color/transparent"
-                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintTop_toTopOf="@+id/email_container"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
                     android:hint="이메일"
+                    android:textSize="14dp"
                     android:paddingLeft="15dp"
                     android:textColorHint="@color/light_grey"
-                    android:inputType="text"/>
+                    android:inputType="textEmailAddress"/>
 
 
 
                 <TextView
                     android:id="@+id/sign_up_warning_email"
-                    android:layout_width="370dp"
+                    android:layout_width="wrap_content"
                     android:layout_height="40dp"
                     android:text="이메일을 입력해주세요."
                     android:paddingLeft="15dp"
@@ -110,13 +112,179 @@
                     android:gravity="center|left"
                     app:layout_constraintTop_toBottomOf="@+id/sign_up_input_email"
                     app:layout_constraintStart_toStartOf="@+id/sign_up_input_email"
+                    app:layout_constraintBottom_toBottomOf="@+id/email_container"
                     android:textColor="@color/red"
                     android:layout_gravity="bottom" />
 
 
 
 
+
+
             </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <Button
+                android:id="@+id/email_check_btn"
+                android:layout_width="380dp"
+                android:layout_height="55dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/email_container"
+                android:layout_marginTop="15dp"
+                android:text="이메일 인증하기"
+                android:textStyle="bold"
+                android:textSize="18dp"
+                android:background="@color/much_light_grey"
+                android:textColor="@color/light_grey"/>
+
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/pw_container"
+                android:layout_width="370dp"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toBottomOf="@+id/email_check_btn"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:layout_marginTop="25dp"
+                android:orientation="vertical"
+                android:background="@drawable/sign_up_bg"
+                app:layout_constrainedWidth="true">
+
+                <EditText
+                    android:id="@+id/sign_up_input_pw"
+                    android:layout_width="360dp"
+                    android:layout_height="50dp"
+                    android:background="@android:color/transparent"
+                    app:layout_constraintTop_toTopOf="@+id/pw_container"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    android:textSize="14dp"
+                    android:hint="비밀번호"
+                    android:paddingLeft="15dp"
+                    android:textColorHint="@color/light_grey"
+                    android:inputType="textPassword"/>
+
+
+
+                <TextView
+                    android:id="@+id/sign_up_warning_pw"
+                    android:layout_width="wrap_content"
+                    android:layout_height="40dp"
+                    android:text="이메일을 입력해주세요."
+                    android:paddingLeft="15dp"
+                    android:textSize="12dp"
+                    android:gravity="center|left"
+                    app:layout_constraintTop_toBottomOf="@+id/sign_up_input_pw"
+                    app:layout_constraintStart_toStartOf="@+id/sign_up_input_pw"
+                    app:layout_constraintBottom_toBottomOf="@+id/pw_container"
+                    android:textColor="@color/red"
+                    android:layout_gravity="bottom" />
+
+
+
+
+
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/pw_check_container"
+                android:layout_width="370dp"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toBottomOf="@+id/pw_container"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:orientation="vertical"
+                android:background="@drawable/sign_up_bg"
+                app:layout_constrainedWidth="true">
+
+                <EditText
+                    android:id="@+id/sign_up_input_pw_check"
+                    android:layout_width="360dp"
+                    android:layout_height="50dp"
+                    android:textSize="14dp"
+                    android:background="@android:color/transparent"
+                    app:layout_constraintTop_toTopOf="@+id/pw_check_container"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    android:hint="비밀번호 확인"
+                    android:paddingLeft="15dp"
+                    android:textColorHint="@color/light_grey"
+                    android:inputType="textPassword"/>
+
+
+
+                <TextView
+                    android:id="@+id/sign_up_warning_pw_check"
+                    android:layout_width="wrap_content"
+                    android:layout_height="40dp"
+                    android:text="이메일을 입력해주세요."
+                    android:paddingLeft="15dp"
+                    android:textSize="12dp"
+                    android:gravity="center|left"
+                    app:layout_constraintTop_toBottomOf="@+id/sign_up_input_pw_check"
+                    app:layout_constraintStart_toStartOf="@+id/sign_up_input_pw_check"
+                    app:layout_constraintBottom_toBottomOf="@+id/pw_check_container"
+                    android:textColor="@color/red"
+                    android:layout_gravity="bottom" />
+
+
+
+
+
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/nick_name_container"
+                android:layout_width="370dp"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toBottomOf="@+id/pw_check_container"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:orientation="vertical"
+                android:layout_marginTop="25dp"
+                android:background="@drawable/sign_up_bg"
+                app:layout_constrainedWidth="true">
+
+                <EditText
+                    android:id="@+id/sign_up_input_nickname"
+                    android:layout_width="360dp"
+                    android:layout_height="50dp"
+                    android:textSize="14dp"
+                    android:background="@android:color/transparent"
+                    app:layout_constraintTop_toTopOf="@+id/nick_name_container"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    android:hint="별명(중복불가)"
+                    android:paddingLeft="15dp"
+                    android:textColorHint="@color/light_grey"
+                    android:inputType="text"/>
+
+
+
+                <TextView
+                    android:id="@+id/sign_up_warning_nickname"
+                    android:layout_width="wrap_content"
+                    android:layout_height="40dp"
+                    android:text="이메일을 입력해주세요."
+                    android:paddingLeft="15dp"
+                    android:textSize="12dp"
+                    android:gravity="center|left"
+                    app:layout_constraintTop_toBottomOf="@+id/sign_up_input_nickname"
+                    app:layout_constraintStart_toStartOf="@+id/sign_up_input_nickname"
+                    app:layout_constraintBottom_toBottomOf="@+id/nick_name_container"
+                    android:textColor="@color/red"
+                    android:layout_gravity="bottom" />
+
+
+
+
+
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
 
 
 
