@@ -9,5 +9,7 @@
     <dimen name="dot_size">4dp</dimen>
     <dimen name="dot_padding">9dp</dimen>
     <dimen name="radius">20dp</dimen>
+    <dimen name="pageMargin">100dp</dimen>
+    <dimen name="pageWidth">300dp</dimen>
 
 </resources>

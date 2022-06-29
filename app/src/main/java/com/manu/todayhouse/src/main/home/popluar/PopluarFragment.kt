@@ -1,26 +1,60 @@
 package com.manu.todayhouse.src.main.home.popluar
 
 import android.os.Bundle
+import android.os.Handler
+import android.os.Looper
 import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.recyclerview.widget.GridLayoutManager
 import androidx.viewpager2.widget.ViewPager2
 import com.manu.todayhouse.R
 import com.manu.todayhouse.config.BaseFragment
 import com.manu.todayhouse.databinding.FragmentPopluarBinding
 import com.manu.todayhouse.src.main.home.popluar.adapter.PopluarBannerAdapter
+import com.manu.todayhouse.src.main.home.popluar.adapter.PopluarCatgAdapter
 import com.manu.todayhouse.src.main.home.popluar.model.BannerData
+import com.manu.todayhouse.src.main.home.popluar.model.PopluarCategroy
 
 class PopluarFragment : BaseFragment<FragmentPopluarBinding>(FragmentPopluarBinding::bind, R.layout.fragment_popluar), PopluarFragmentInterface {
 
     private lateinit var popluarBannerAdapter: PopluarBannerAdapter
+    private val sliderImageHandler: Handler = Handler(Looper.getMainLooper())
+    private val sliderImageRunnable = Runnable { binding.popluarBannerView.currentItem = binding.popluarBannerView.currentItem + 1 }
+    private var catgLists = ArrayList<PopluarCategroy>()
+    private lateinit var popluarCatgAdapter: PopluarCatgAdapter
+
+
+
+
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
         PopluarService(this@PopluarFragment).getBannerImage()
+
+        catgLists.add(PopluarCategroy(R.drawable.popluar_shopping, "쇼핑하기"))
+        catgLists.add(PopluarCategroy(R.drawable.quick_delivery, "빠른배송"))
+        catgLists.add(PopluarCategroy(R.drawable.n_house_party, "N평집들이"))
+        catgLists.add(PopluarCategroy(R.drawable.place_picture, "공간별사진"))
+        catgLists.add(PopluarCategroy(R.drawable.fix_event, "시공이벤트"))
+        catgLists.add(PopluarCategroy(R.drawable.move_house, "쉬운이사"))
+        catgLists.add(PopluarCategroy(R.drawable.time_sale, "오늘의딜"))
+        catgLists.add(PopluarCategroy(R.drawable.discount_cupon, "누르면할인"))
+        catgLists.add(PopluarCategroy(R.drawable.cat_shopping, "멍냥템특가"))
+        catgLists.add(PopluarCategroy(R.drawable.howto_home, "집에서뭐해?"))
+
+        popluarCatgAdapter = PopluarCatgAdapter(catgLists)
+
+        val CatgView = binding.popluarCatgView
+
+        CatgView.apply {
+            adapter = popluarCatgAdapter
+            layoutManager = GridLayoutManager(context, 5)
+        }
+
     }
 
     override fun onGetBannerImageSuccess(response: BannerData) {
@@ -29,7 +63,27 @@ class PopluarFragment : BaseFragment<FragmentPopluarBinding>(FragmentPopluarBind
         binding.popluarBannerView.apply {
             adapter = popluarBannerAdapter
             orientation = ViewPager2.ORIENTATION_HORIZONTAL
+            registerOnPageChangeCallback(object : ViewPager2.OnPageChangeCallback(){
+                override fun onPageSelected(position: Int) {
+                    super.onPageSelected(position)
+                    binding.textViewCurrentBanner.text = "${position + 1}"
+                    binding.textViewTotalBanner.text = "${response.result.size}"
+                    sliderImageHandler.removeCallbacks(sliderImageRunnable)
+                    sliderImageHandler.postDelayed(sliderImageRunnable, 3000)
+                }
+            })
+
         }
+    }
+
+    override fun onResume() {
+        super.onResume()
+        sliderImageHandler.postDelayed(sliderImageRunnable, 1000)
+    }
+
+    override fun onPause() {
+        super.onPause()
+        sliderImageHandler.removeCallbacks(sliderImageRunnable)
     }
 
     override fun onGetBannerImageFail(message: String) {

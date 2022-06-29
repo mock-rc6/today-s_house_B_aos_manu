@@ -13,6 +13,7 @@ import com.kakao.sdk.common.util.Utility
 import com.manu.todayhouse.config.BaseActivity
 import com.manu.todayhouse.databinding.ActivityLoginBinding
 import com.manu.todayhouse.src.MainActivity
+import com.manu.todayhouse.src.login.signin.SignInActivity
 import com.manu.todayhouse.src.login.signup.SignUpActivity
 
 class LoginActivity : BaseActivity<ActivityLoginBinding>(ActivityLoginBinding::inflate) {
@@ -31,6 +32,11 @@ class LoginActivity : BaseActivity<ActivityLoginBinding>(ActivityLoginBinding::i
 
         binding.emailSignup.setOnClickListener {
             val intent = Intent(this@LoginActivity, SignUpActivity::class.java)
+            startActivity(intent)
+        }
+
+        binding.emailLogin.setOnClickListener {
+            val intent = Intent(this@LoginActivity, SignInActivity::class.java)
             startActivity(intent)
         }
 
@@ -81,6 +87,8 @@ class LoginActivity : BaseActivity<ActivityLoginBinding>(ActivityLoginBinding::i
                 LoginClient.instance.loginWithKakaoAccount(this, callback = callback)
             }
         }
+
+
 
     }
 }

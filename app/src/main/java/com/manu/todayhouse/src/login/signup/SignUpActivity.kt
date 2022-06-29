@@ -15,6 +15,7 @@ import com.manu.todayhouse.databinding.ActivitySignUpBinding
 import com.manu.todayhouse.src.MainActivity
 import com.manu.todayhouse.src.login.LoginActivity
 import java.util.regex.Pattern
+import kotlinx.android.synthetic.main.activity_main.*
 
 class SignUpActivity : BaseActivity<ActivitySignUpBinding>(ActivitySignUpBinding::inflate) {
 
@@ -39,13 +40,11 @@ class SignUpActivity : BaseActivity<ActivitySignUpBinding>(ActivitySignUpBinding
             if (!android.util.Patterns.EMAIL_ADDRESS.matcher(email).matches()){
                 binding.signUpWarningEmail.text = "이메일을 입력해주세요."
                 binding.signUpWarningEmail.visibility = View.VISIBLE
-                binding.signUpWarningEmail.setBackgroundColor(R.drawable.activity_warning_sign_up)
-                binding.signUpInputEmail.setBackgroundColor(R.drawable.activity_warning_sign_up)
-                binding.signUpWarningEmail.scaleY = 1.2f
-           } else {
-                binding.signUpWarningEmail.text = ""
-                binding.signUpWarningEmail.visibility = View.INVISIBLE
+                binding.emailContainer.setBackgroundColor(R.drawable.activity_warning_sign_up)
 
+           } else {
+                binding.signUpWarningEmail.visibility = View.INVISIBLE
+                binding.emailContainer.setBackgroundColor(R.drawable.sign_up_bg)
             }
         }
 

@@ -16,6 +16,7 @@
     <color name="today_house_color">#35c5f0</color>
     <color name="much_light_grey">#39CACACA</color>
     <color name="red">#f00</color>
+    <color name="today_house_color_light">#6F35C5F0</color>
 
 
 </resources>
