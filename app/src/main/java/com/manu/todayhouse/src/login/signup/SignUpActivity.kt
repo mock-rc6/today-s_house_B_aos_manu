@@ -5,8 +5,11 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.text.Editable
 import android.text.TextWatcher
+import android.util.Log
 import android.view.View
 import androidx.core.widget.addTextChangedListener
+import androidx.core.widget.doAfterTextChanged
+import com.manu.todayhouse.R
 import com.manu.todayhouse.config.BaseActivity
 import com.manu.todayhouse.databinding.ActivitySignUpBinding
 import com.manu.todayhouse.src.MainActivity
@@ -20,38 +23,33 @@ class SignUpActivity : BaseActivity<ActivitySignUpBinding>(ActivitySignUpBinding
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
+        binding.signUpWarningEmail.visibility = View.INVISIBLE
+
         binding.signUpBack.setOnClickListener {
             val intent = Intent(this@SignUpActivity, LoginActivity::class.java)
             startActivity(intent)
         }
 
-        binding.signUpInputEmail.addTextChangedListener { object : TextWatcher {
-            override fun beforeTextChanged(s: CharSequence?, start: Int, count: Int, after: Int) {
-                TODO("Not yet implemented")
+
+        var email = ""
+
+
+        binding.signUpInputEmail.doAfterTextChanged {
+            email = it.toString()
+            if (!android.util.Patterns.EMAIL_ADDRESS.matcher(email).matches()){
+                binding.signUpWarningEmail.text = "이메일을 입력해주세요."
+                binding.signUpWarningEmail.visibility = View.VISIBLE
+                binding.signUpWarningEmail.setBackgroundColor(R.drawable.activity_warning_sign_up)
+                binding.signUpInputEmail.setBackgroundColor(R.drawable.activity_warning_sign_up)
+                binding.signUpWarningEmail.scaleY = 1.2f
+           } else {
+                binding.signUpWarningEmail.text = ""
+                binding.signUpWarningEmail.visibility = View.INVISIBLE
+
             }
-
-            override fun onTextChanged(s: CharSequence?, start: Int, before: Int, count: Int) {
-                TODO("Not yet implemented")
-            }
-
-            override fun afterTextChanged(s: Editable?) {
-                checkEmail()
-            }
-
-        } }
-
-    }
-
-    fun checkEmail() : Boolean {
-        var email = binding.signUpInputEmail.text.toString().trim()
-        val p = Pattern.matches(emailValidation, email)
-
-        if (p) {
-            binding.signUpWarningEmail.visibility = View.INVISIBLE
-            return true
-        } else {
-            binding.signUpWarningEmail.visibility = View.VISIBLE
-            return false
         }
+
     }
+
+
 }
