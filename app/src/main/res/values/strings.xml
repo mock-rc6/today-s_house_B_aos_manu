@@ -5,4 +5,7 @@
     <string name="email_signup"><u>이메일로 가입</u></string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="user_agree"><u>이용약관</u></string>
+    <string name="personal_private"><u>개인정보수집 및 이용동의</u></string>
+    <string name="event_push_alarm"><u>이벤트, 쿠폰, 특가 알림 메일, 앱푸시 및 SMS 등 수신</u></string>
 </resources>

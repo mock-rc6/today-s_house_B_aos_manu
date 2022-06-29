@@ -26,6 +26,14 @@ class SignUpActivity : BaseActivity<ActivitySignUpBinding>(ActivitySignUpBinding
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
+        val registerBtn = binding.registerEmail
+        val recommendCheckBtn = binding.recommendCheckBtn
+
+        registerBtn.isClickable = false
+        registerBtn.isEnabled = false
+        recommendCheckBtn.isClickable = false
+        recommendCheckBtn.isEnabled = false
+
         binding.signUpWarningEmail.visibility = View.GONE
         binding.emailCheckBtn.isEnabled = false
         binding.emailCheckBtn.isClickable = false
