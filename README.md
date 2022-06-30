@@ -23,3 +23,10 @@
 2. Home 화면 ViewPager API 연결완료
 3. 회원가입화면 그리기 완료
 4. Home Category 버튼 생성 완료
+
+#6/30일 개발일지
+1. 로그인 API 로그인 구현 완료
+2. 회원가입 API 연결 및 구현 완료
+3. Btm navi UI 변경
+4. Home화면 UI 변경 완료
+5. 스토어 메인페이지 API 연결 완료
