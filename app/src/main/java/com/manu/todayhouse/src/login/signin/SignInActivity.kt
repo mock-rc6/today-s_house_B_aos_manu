@@ -47,7 +47,7 @@ class SignInActivity : BaseActivity<ActivitySignInBinding>(ActivitySignInBinding
 
         loginBtn.isClickable = false
         loginBtn.isEnabled = false
-        loginBtn.setBackgroundResource(R.color.today_house_color_light)
+        loginBtn.setBackgroundResource(R.drawable.register_before_finish)
 
 
         emailLogIn.doAfterTextChanged {

@@ -43,12 +43,12 @@ class SignUpActivity : BaseActivity<ActivitySignUpBinding>(ActivitySignUpBinding
         val registerBtn = binding.registerEmail
         val recommendCheckBtn = binding.recommendCheckBtn
 
-        registerBtn.isClickable = true
-        registerBtn.isEnabled = true
+        registerBtn.isClickable = false
+        registerBtn.isEnabled = false
         recommendCheckBtn.isClickable = false
         recommendCheckBtn.isEnabled = false
-        recommendCheckBtn.setBackgroundResource(R.color.today_house_color_light)
-        registerBtn.setBackgroundResource(R.color.today_house_color_light)
+        recommendCheckBtn.setBackgroundResource(R.drawable.register_before_finish)
+        registerBtn.setBackgroundResource(R.drawable.register_before_finish)
         recommendCheckBtn.clipToOutline = true
         registerBtn.clipToOutline = true
 
@@ -160,12 +160,19 @@ class SignUpActivity : BaseActivity<ActivitySignUpBinding>(ActivitySignUpBinding
         }
 
 
-
-        if (!android.util.Patterns.EMAIL_ADDRESS.matcher(email).matches() && Pattern.compile(pwValidation).matcher(pw).matches() && pw == pwCheck && nickname.length >= 1) {
-            binding.registerEmail.isClickable = true
-            binding.registerEmail.isEnabled = true
-            binding.registerEmail.setBackgroundResource(R.color.today_house_color)
+        binding.allChecked.setOnClickListener {
+            Log.d("testt", "$email")
+            if (!android.util.Patterns.EMAIL_ADDRESS.matcher(email).matches() && Pattern.compile(pwValidation).matcher(pw).matches() && pw != pwCheck && nickname.length < 2) {
+                registerBtn.isClickable = false
+                registerBtn.isEnabled = false
+                registerBtn.setBackgroundResource(R.color.today_house_color_light)
+            } else {
+                registerBtn.isClickable = true
+                registerBtn.isEnabled = true
+                registerBtn.setBackgroundResource(R.color.today_house_color)
+            }
         }
+
 
 
         val signupRetrofitInterface = ApplicationClass.sRetrofit.create(SignupRetrofitInterface::class.java)
@@ -185,7 +192,11 @@ class SignUpActivity : BaseActivity<ActivitySignUpBinding>(ActivitySignUpBinding
                 object : Callback<SignUpData> {
                     override fun onResponse(call: Call<SignUpData>, response: Response<SignUpData>) {
                         if (response.isSuccessful) {
-                            val idToken = response.body() as SignUpData
+                            val registerUser = response.body() as SignUpData
+                            when (registerUser.message) {
+                                "요청에 성공했습니다." -> startActivity(Intent(this@SignUpActivity, LoginActivity::class.java))
+                                else -> showCustomToast(registerUser.message)
+                            }
                         }
                     }
 
@@ -196,8 +207,6 @@ class SignUpActivity : BaseActivity<ActivitySignUpBinding>(ActivitySignUpBinding
                 }
             )
 
-            val  intent = Intent(this@SignUpActivity, LoginActivity::class.java)
-            startActivity(intent)
         }
 
 
