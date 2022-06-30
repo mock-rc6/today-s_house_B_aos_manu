@@ -12,16 +12,30 @@ import androidx.core.widget.addTextChangedListener
 import androidx.core.widget.doAfterTextChanged
 import androidx.core.widget.doOnTextChanged
 import com.manu.todayhouse.R
+import com.manu.todayhouse.config.ApplicationClass
 import com.manu.todayhouse.config.BaseActivity
 import com.manu.todayhouse.databinding.ActivitySignUpBinding
 import com.manu.todayhouse.src.MainActivity
 import com.manu.todayhouse.src.login.LoginActivity
+import com.manu.todayhouse.src.login.signup.model.RegisterResult
+import com.manu.todayhouse.src.login.signup.model.RegisterUser
+import com.manu.todayhouse.src.login.signup.model.SignUpData
+import retrofit2.Call
+import retrofit2.Callback
+import retrofit2.Response
 import java.util.regex.Pattern
 
 class SignUpActivity : BaseActivity<ActivitySignUpBinding>(ActivitySignUpBinding::inflate) {
 
     private val emailValidation = "^[_A-Za-z0-9-]+(\\.[_A-Za-z0-9-]+)*@[A-Za-z0-9]+(\\.[A-Za-z0-9]+)*(\\.[A-Za-z]{2,})$"
     private val pwValidation = "^.*(?=^.{8,15}\$)(?=.*\\d)(?=.*[a-zA-Z])(?=.*[!@#\$%^&+=]).*\$"
+    private var email : String = ""
+    private var pw = ""
+    private var pwCheck = ""
+    private var recommendText = ""
+    private var nickname = ""
+    private var registId = HashMap<String, Any>()
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -29,10 +43,14 @@ class SignUpActivity : BaseActivity<ActivitySignUpBinding>(ActivitySignUpBinding
         val registerBtn = binding.registerEmail
         val recommendCheckBtn = binding.recommendCheckBtn
 
-        registerBtn.isClickable = false
-        registerBtn.isEnabled = false
+        registerBtn.isClickable = true
+        registerBtn.isEnabled = true
         recommendCheckBtn.isClickable = false
         recommendCheckBtn.isEnabled = false
+        recommendCheckBtn.setBackgroundResource(R.color.today_house_color_light)
+        registerBtn.setBackgroundResource(R.color.today_house_color_light)
+        recommendCheckBtn.clipToOutline = true
+        registerBtn.clipToOutline = true
 
         binding.signUpWarningEmail.visibility = View.GONE
         binding.emailCheckBtn.isEnabled = false
@@ -45,7 +63,7 @@ class SignUpActivity : BaseActivity<ActivitySignUpBinding>(ActivitySignUpBinding
 
         val signupEmail = binding.signUpInputEmail
 
-        var email = ""
+
 
 
         binding.signUpInputEmail.doAfterTextChanged {
@@ -65,16 +83,18 @@ class SignUpActivity : BaseActivity<ActivitySignUpBinding>(ActivitySignUpBinding
                 binding.emailCheckBtn.setTextColor(ContextCompat.getColor(applicationContext!!, R.color.today_house_color))
                 binding.emailContainer.setBackgroundResource(R.drawable.sign_up_bg)
                 binding.emailContainer.scaleY = 0.9f
-
+                email = it.toString()
             }
+
+
         }
+
 
         val pwInput = binding.signUpInputPw
         val pwWarning = binding.signUpWarningPw
         val pwCheckInput = binding.signUpInputPwCheck
         val pwCheckWarning = binding.signUpWarningPwCheck
-        var pw = ""
-        var pwCheck = ""
+
 
         pwWarning.visibility = View.GONE
         pwCheckWarning.visibility = View.GONE
@@ -89,6 +109,7 @@ class SignUpActivity : BaseActivity<ActivitySignUpBinding>(ActivitySignUpBinding
                 pwWarning.visibility = View.GONE
                 binding.pwContainer.setBackgroundResource(R.drawable.sign_up_bg)
             }
+
         }
 
         pwCheckInput.doAfterTextChanged {
@@ -106,7 +127,7 @@ class SignUpActivity : BaseActivity<ActivitySignUpBinding>(ActivitySignUpBinding
         val inputNickname = binding.signUpInputNickname
         val inputWarningNickname = binding.signUpWarningNickname
         inputWarningNickname.visibility = View.GONE
-        var nickname = ""
+
 
         inputNickname.doAfterTextChanged {
             nickname = it.toString()
@@ -118,6 +139,65 @@ class SignUpActivity : BaseActivity<ActivitySignUpBinding>(ActivitySignUpBinding
                 inputWarningNickname.visibility = View.GONE
                 binding.nickNameContainer.setBackgroundResource(R.drawable.sign_up_bg)
             }
+        }
+
+        val recommendIntput = binding.friendsRecommendText
+
+        recommendIntput.doAfterTextChanged {
+            recommendText = it.toString()
+            if (recommendText.length < 1) {
+
+            } else if(recommendText.length == 0) {
+                recommendCheckBtn.isClickable = false
+                recommendCheckBtn.isEnabled = false
+                recommendCheckBtn.setBackgroundResource(R.color.today_house_color_light)
+            } else {
+                recommendCheckBtn.clipToOutline = true
+                recommendCheckBtn.isClickable = true
+                recommendCheckBtn.isEnabled = true
+                recommendCheckBtn.setBackgroundResource(R.color.today_house_color)
+            }
+        }
+
+
+
+        if (!android.util.Patterns.EMAIL_ADDRESS.matcher(email).matches() && Pattern.compile(pwValidation).matcher(pw).matches() && pw == pwCheck && nickname.length >= 1) {
+            binding.registerEmail.isClickable = true
+            binding.registerEmail.isEnabled = true
+            binding.registerEmail.setBackgroundResource(R.color.today_house_color)
+        }
+
+
+        val signupRetrofitInterface = ApplicationClass.sRetrofit.create(SignupRetrofitInterface::class.java)
+
+
+
+
+
+        registerBtn.setOnClickListener {
+            registId["email"] = email
+            registId["name"] = nickname
+            registId["password"] = pw
+
+            Log.d("testt", "$registId")
+
+            signupRetrofitInterface.registerUser(registId).enqueue(
+                object : Callback<SignUpData> {
+                    override fun onResponse(call: Call<SignUpData>, response: Response<SignUpData>) {
+                        if (response.isSuccessful) {
+                            val idToken = response.body() as SignUpData
+                        }
+                    }
+
+                    override fun onFailure(call: Call<SignUpData>, t: Throwable) {
+                        showCustomToast(t.message ?: "통신 오류")
+                    }
+
+                }
+            )
+
+            val  intent = Intent(this@SignUpActivity, LoginActivity::class.java)
+            startActivity(intent)
         }
 
 

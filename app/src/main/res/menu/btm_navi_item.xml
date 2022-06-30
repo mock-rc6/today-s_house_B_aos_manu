@@ -6,26 +6,26 @@
         <item
             android:id="@+id/home_btn"
             android:enabled="true"
-            android:icon="@drawable/btm_home_btn_fill"
+            android:icon="@drawable/btm_home_btn"
             android:title="홈"/>
 
         <item
             android:id="@+id/store_btn"
             android:enabled="true"
-            android:icon="@drawable/btm_navigation_bar_02"
+            android:icon="@drawable/btm_store_btn"
             android:title="스토어"/>
 
 
         <item
             android:id="@+id/home_service_btn"
             android:enabled="true"
-            android:icon="@drawable/btm_navigation_bar_03"
+            android:icon="@drawable/btm_homeservice_btn"
             android:title="홈서비스"/>
 
         <item
             android:id="@+id/mypage_btn"
             android:enabled="true"
-            android:icon="@drawable/btm_navigation_bar_04"
+            android:icon="@drawable/btm_mypage_btn"
             android:title="마이페이지"/>
         <item
             android:id="@+id/main_btm_plus_button"

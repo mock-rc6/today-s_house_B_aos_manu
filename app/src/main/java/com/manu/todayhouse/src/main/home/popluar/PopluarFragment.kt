@@ -35,16 +35,16 @@ class PopluarFragment : BaseFragment<FragmentPopluarBinding>(FragmentPopluarBind
 
         PopluarService(this@PopluarFragment).getBannerImage()
 
-        catgLists.add(PopluarCategroy(R.drawable.popluar_shopping, "쇼핑하기"))
-        catgLists.add(PopluarCategroy(R.drawable.quick_delivery, "빠른배송"))
-        catgLists.add(PopluarCategroy(R.drawable.n_house_party, "N평집들이"))
-        catgLists.add(PopluarCategroy(R.drawable.place_picture, "공간별사진"))
-        catgLists.add(PopluarCategroy(R.drawable.fix_event, "시공이벤트"))
-        catgLists.add(PopluarCategroy(R.drawable.move_house, "쉬운이사"))
-        catgLists.add(PopluarCategroy(R.drawable.time_sale, "오늘의딜"))
-        catgLists.add(PopluarCategroy(R.drawable.discount_cupon, "누르면할인"))
-        catgLists.add(PopluarCategroy(R.drawable.cat_shopping, "멍냥템특가"))
-        catgLists.add(PopluarCategroy(R.drawable.howto_home, "집에서뭐해?"))
+        catgLists.add(PopluarCategroy(R.drawable.home_shopping_btn, "쇼핑하기"))
+        catgLists.add(PopluarCategroy(R.drawable.home_quickdel_btn, "빠른배송"))
+        catgLists.add(PopluarCategroy(R.drawable.home_n_place, "N평집들이"))
+        catgLists.add(PopluarCategroy(R.drawable.home_place_picture, "공간별사진"))
+        catgLists.add(PopluarCategroy(R.drawable.home_fix_evnet, "시공이벤트"))
+        catgLists.add(PopluarCategroy(R.drawable.home_easy_move, "쉬운이사"))
+        catgLists.add(PopluarCategroy(R.drawable.home_today_deal, "오늘의딜"))
+        catgLists.add(PopluarCategroy(R.drawable.home_click_cupon, "누르면할인"))
+        catgLists.add(PopluarCategroy(R.drawable.home_cat_and_dog, "멍냥템특가"))
+        catgLists.add(PopluarCategroy(R.drawable.home_what_home, "집에서뭐해?"))
 
         popluarCatgAdapter = PopluarCatgAdapter(catgLists)
 

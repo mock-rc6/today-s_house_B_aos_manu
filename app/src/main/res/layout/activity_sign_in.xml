@@ -42,7 +42,7 @@
 
     <EditText
         android:id="@+id/sign_in_text"
-        android:layout_width="330dp"
+        android:layout_width="370dp"
         android:layout_height="50dp"
         android:hint="이메일"
         android:textSize="15dp"
@@ -56,7 +56,7 @@
 
     <EditText
         android:id="@+id/sign_in_pw"
-        android:layout_width="330dp"
+        android:layout_width="370dp"
         android:layout_height="50dp"
         android:hint="비밀번호"
         android:paddingLeft="15dp"
@@ -71,8 +71,8 @@
 
     <Button
         android:id="@+id/sign_in_btn"
-        android:layout_width="330dp"
-        android:layout_height="50dp"
+        android:layout_width="370dp"
+        android:layout_height="60dp"
         android:backgroundTint="@color/today_house_color"
         app:layout_constraintTop_toBottomOf="@id/sign_in_pw"
         app:layout_constraintStart_toStartOf="@+id/sign_in_text"
@@ -90,7 +90,7 @@
         app:layout_constraintStart_toStartOf="@+id/sign_in_btn"
         app:layout_constraintEnd_toEndOf="@+id/sign_in_btn"
         android:layout_marginTop="35dp"
-        android:textColor="@color/light_grey"/>
+        android:textColor="@color/grey"/>
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
