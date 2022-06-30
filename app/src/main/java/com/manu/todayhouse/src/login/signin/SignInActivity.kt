@@ -76,6 +76,10 @@ class SignInActivity : BaseActivity<ActivitySignInBinding>(ActivitySignInBinding
             signinRetrofitInterface.userLogin(userLogin).enqueue(object : Callback<SignUpData>{
                 override fun onResponse(call: Call<SignUpData>, response: Response<SignUpData>) {
                     var userJWT = response.body() as SignUpData
+                    when (userJWT.message) {
+                        "요청에 성공했습니다." -> startActivity(Intent(this@SignInActivity, MainActivity::class.java))
+                        else -> showCustomToast(userJWT.message)
+                    }
                 }
 
                 override fun onFailure(call: Call<SignUpData>, t: Throwable) {
@@ -85,8 +89,6 @@ class SignInActivity : BaseActivity<ActivitySignInBinding>(ActivitySignInBinding
 
 
             })
-            val intent = Intent(this@SignInActivity, MainActivity::class.java)
-            startActivity(intent)
         }
 
 

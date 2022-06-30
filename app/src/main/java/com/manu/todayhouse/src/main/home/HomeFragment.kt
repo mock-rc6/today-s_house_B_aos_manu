@@ -3,7 +3,6 @@ package com.manu.todayhouse.src.main.home
 import android.os.Bundle
 import android.view.View
 import androidx.fragment.app.FragmentActivity
-import com.android.car.ui.toolbar.TabLayout
 import com.google.android.material.tabs.TabLayoutMediator
 import com.manu.todayhouse.R
 import com.manu.todayhouse.config.BaseFragment
