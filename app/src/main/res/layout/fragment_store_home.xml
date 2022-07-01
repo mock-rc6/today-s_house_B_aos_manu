@@ -1,14 +1,72 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".src.main.store.storehome.StoreHomeFragment">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
+    <androidx.core.widget.NestedScrollView
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
+        android:layout_height="wrap_content"
+        android:overScrollMode="never"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
 
-</FrameLayout>
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <com.manu.todayhouse.config.NestedScrollableHost
+                android:id="@+id/store_nest_scroll"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintStart_toStartOf="parent">
+
+                <androidx.viewpager2.widget.ViewPager2
+                    android:id="@+id/store_banner_viewpager"
+                    android:layout_width="match_parent"
+                    android:layout_height="250dp"
+                    android:overScrollMode="never"
+                    android:scrollIndicators="bottom"
+                    android:orientation="horizontal"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"/>
+
+
+
+            </com.manu.todayhouse.config.NestedScrollableHost>
+
+
+            <com.google.android.material.tabs.TabLayout
+                android:id="@+id/tab_store_banner"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:scrollIndicators="none"
+                app:tabBackground="@drawable/selector_tab_white"
+                app:tabGravity="center"
+                app:tabIndicator="@null"
+                app:layout_constraintBottom_toBottomOf="@+id/store_nest_scroll"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:tabPaddingEnd="@dimen/dot_padding"
+                app:tabPaddingStart="@dimen/dot_padding"
+                tools:layout_editor_absoluteY="5dp" />
+
+
+
+
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+
+    </androidx.core.widget.NestedScrollView>
+
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

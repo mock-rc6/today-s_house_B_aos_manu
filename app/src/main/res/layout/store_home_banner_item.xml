@@ -5,14 +5,13 @@
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <ImageView
-        android:id="@+id/banner_item_img"
+        android:id="@+id/store_home_banner"
         android:layout_width="match_parent"
-        android:layout_height="120dp"
+        android:layout_height="250dp"
+        android:adjustViewBounds="true"
+        android:scaleType="fitXY"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        android:src="@drawable/banner_img"
-        android:background="@drawable/banner_bg"
-        android:scaleType="fitXY"
-        android:adjustViewBounds="true"/>
+        app:layout_constraintEnd_toEndOf="parent"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

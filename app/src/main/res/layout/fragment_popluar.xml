@@ -17,23 +17,34 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent">
 
-            <androidx.viewpager2.widget.ViewPager2
-                android:id="@+id/popluar_banner_view"
+            <com.manu.todayhouse.config.NestedScrollableHost
+                android:id="@+id/viewpager_nestscroll"
                 android:layout_width="375dp"
-                android:layout_height="100dp"
-                android:overScrollMode="never"
+                android:layout_height="140dp"
                 app:layout_constraintTop_toTopOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                android:layout_marginTop="20dp"/>
+                app:layout_constraintEnd_toEndOf="parent">
+
+                <androidx.viewpager2.widget.ViewPager2
+                    android:id="@+id/popluar_banner_view"
+                    android:layout_width="375dp"
+                    android:layout_height="120dp"
+                    android:overScrollMode="never"
+                    android:layout_marginTop="20dp"/>
+
+
+
+            </com.manu.todayhouse.config.NestedScrollableHost>
+
+
 
             <androidx.appcompat.widget.LinearLayoutCompat
                 android:id="@+id/indicator_all_view"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal"
-                app:layout_constraintEnd_toEndOf="@+id/popluar_banner_view"
-                app:layout_constraintBottom_toBottomOf="@+id/popluar_banner_view"
+                app:layout_constraintEnd_toEndOf="@+id/viewpager_nestscroll"
+                app:layout_constraintBottom_toBottomOf="@+id/viewpager_nestscroll"
                 android:layout_marginRight="12dp"
                 android:layout_marginBottom="16dp"
                 android:paddingLeft="8dp"
@@ -80,7 +91,7 @@
                 android:id="@+id/popluar_catg_view"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                app:layout_constraintTop_toBottomOf="@+id/popluar_banner_view"
+                app:layout_constraintTop_toBottomOf="@+id/viewpager_nestscroll"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 android:paddingLeft="15dp"
