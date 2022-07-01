@@ -30,3 +30,8 @@
 3. Btm navi UI 변경
 4. Home화면 UI 변경 완료
 5. 스토어 메인페이지 API 연결 완료
+
+#6/31일 개발일지
+1. 스토에 메인페이지 Banner API 연결 완료
+2. Viewpager 중첩되는 오류 NestedScrollHost로 해결 완료
+3. Banner에 Indicator 등록 완료
