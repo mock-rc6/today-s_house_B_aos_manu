@@ -8,4 +8,5 @@ interface StoreFragmentInterface {
 
     fun onGetStoreBannerImageFail(message : String)
 
+
 }

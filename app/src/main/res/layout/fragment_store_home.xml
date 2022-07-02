@@ -55,6 +55,44 @@
                 app:tabPaddingStart="@dimen/dot_padding"
                 tools:layout_editor_absoluteY="5dp" />
 
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toBottomOf="@+id/store_nest_scroll">
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/store_home_category_grid"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    android:paddingRight="30dp"
+                    android:paddingLeft="30dp"
+                    android:layout_marginTop="10dp"
+                    android:overScrollMode="never"
+                    android:paddingTop="10dp"
+                    android:textAlignment="center"/>
+
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/today_deal_recycler"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                    app:layout_constraintTop_toBottomOf="@+id/store_home_category_grid"
+                    app:layout_constraintStart_toStartOf="parent"/>
+
+
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+
+
+
 
 
 
