@@ -6,6 +6,7 @@
         <entry key="..\:/dev/TodayHouse/app/src/main/res/drawable/banner_bg.xml" value="0.3405" />
         <entry key="..\:/dev/TodayHouse/app/src/main/res/drawable/btm_mypage_btn.xml" value="0.259" />
         <entry key="..\:/dev/TodayHouse/app/src/main/res/drawable/btn_blue_bg.xml" value="0.3405" />
+        <entry key="..\:/dev/TodayHouse/app/src/main/res/drawable/category_all_bg.xml" value="0.356" />
         <entry key="..\:/dev/TodayHouse/app/src/main/res/drawable/check_box_divide.xml" value="0.3405" />
         <entry key="..\:/dev/TodayHouse/app/src/main/res/drawable/deal_item_select.xml" value="0.259" />
         <entry key="..\:/dev/TodayHouse/app/src/main/res/drawable/login_apple_bg.xml" value="0.2445" />
@@ -23,6 +24,7 @@
         <entry key="..\:/dev/TodayHouse/app/src/main/res/layout/activity_sign_in.xml" value="0.18802083333333333" />
         <entry key="..\:/dev/TodayHouse/app/src/main/res/layout/activity_sign_up.xml" value="0.264" />
         <entry key="..\:/dev/TodayHouse/app/src/main/res/layout/activity_splash.xml" value="0.25364583333333335" />
+        <entry key="..\:/dev/TodayHouse/app/src/main/res/layout/fragment_follow.xml" value="0.36614583333333334" />
         <entry key="..\:/dev/TodayHouse/app/src/main/res/layout/fragment_home.xml" value="0.36614583333333334" />
         <entry key="..\:/dev/TodayHouse/app/src/main/res/layout/fragment_home_service.xml" value="0.25364583333333335" />
         <entry key="..\:/dev/TodayHouse/app/src/main/res/layout/fragment_my_page.xml" value="0.25364583333333335" />

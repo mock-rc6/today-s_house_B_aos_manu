@@ -10,4 +10,9 @@ interface PopluarBannerRetrofitInterface {
     fun getBannerImage(
 
     ) : Call<BannerData>
+
+    @GET("app")
+    fun getMenuHouseInfo(
+
+    )
 }

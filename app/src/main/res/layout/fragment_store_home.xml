@@ -77,15 +77,119 @@
                     android:overScrollMode="never"
                     android:textAlignment="center"/>
 
-
-                <androidx.recyclerview.widget.RecyclerView
-                    android:id="@+id/today_deal_recycler"
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/category_find_item"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:orientation="horizontal"
-                    app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
                     app:layout_constraintTop_toBottomOf="@+id/store_home_category_grid"
-                    app:layout_constraintStart_toStartOf="parent"/>
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent">
+
+                    <TextView
+                        android:id="@+id/find_product_ques"
+                        android:layout_width="200dp"
+                        android:layout_height="40dp"
+                        android:text="어떤 상품을 찾나요?"
+                        android:gravity="center|start"
+                        android:textSize="22dp"
+                        android:textColor="@color/black"
+                        android:textStyle="bold"
+                        android:layout_marginTop="40dp"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        android:layout_marginLeft="15dp"/>
+
+
+                    <TextView
+                        android:layout_width="130dp"
+                        android:layout_height="40dp"
+                        android:text="카테고리 전체 >"
+                        android:textSize="18dp"
+                        android:textColor="@color/today_house_color"
+                        android:background="@drawable/category_all_bg"
+                        android:textStyle="bold"
+                        android:gravity="center"
+                        app:layout_constraintBottom_toBottomOf="@+id/find_product_ques"
+                        app:layout_constraintTop_toTopOf="@+id/find_product_ques"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        android:layout_marginRight="15dp"/>
+
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/category_recycler_view"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        app:layout_constraintTop_toBottomOf="@+id/find_product_ques"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"/>
+
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/today_deal_container"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintTop_toBottomOf="@+id/category_find_item"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent">
+
+                    <TextView
+                        android:id="@+id/today_deal_text"
+                        android:layout_width="200dp"
+                        android:layout_height="40dp"
+                        android:text="오늘의 딜"
+                        android:textSize="22dp"
+                        android:gravity="center|start"
+                        android:textColor="@color/black"
+                        android:textStyle="bold"
+                        android:layout_marginTop="40dp"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        android:layout_marginLeft="15dp"/>
+
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="더보기"
+                        android:textSize="14dp"
+                        android:textColor="@color/grey"
+                        android:textStyle="bold"
+                        android:gravity="center"
+                        app:layout_constraintBottom_toBottomOf="@+id/today_deal_text"
+                        app:layout_constraintTop_toTopOf="@+id/today_deal_text"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        android:layout_marginRight="15dp"/>
+
+
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/today_deal_recycler"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:layout_marginTop="25dp"
+                        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                        app:layout_constraintTop_toBottomOf="@+id/today_deal_text"
+                        app:layout_constraintStart_toStartOf="parent"/>
+
+
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="100dp"
+                    app:layout_constraintTop_toBottomOf="@+id/today_deal_container"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"/>
+
+
+
+
 
 
 
