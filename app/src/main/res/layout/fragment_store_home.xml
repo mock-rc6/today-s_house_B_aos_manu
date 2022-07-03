@@ -15,7 +15,7 @@
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent">
+            android:layout_height="wrap_content">
 
             <com.manu.todayhouse.config.NestedScrollableHost
                 android:id="@+id/store_nest_scroll"
@@ -26,7 +26,7 @@
 
                 <androidx.viewpager2.widget.ViewPager2
                     android:id="@+id/store_banner_viewpager"
-                    android:layout_width="match_parent"
+                    android:layout_width="410dp"
                     android:layout_height="250dp"
                     android:overScrollMode="never"
                     android:scrollIndicators="bottom"
@@ -37,23 +37,27 @@
 
 
 
+
+
             </com.manu.todayhouse.config.NestedScrollableHost>
 
-
             <com.google.android.material.tabs.TabLayout
-                android:id="@+id/tab_store_banner"
-                android:layout_width="0dp"
+                android:id="@+id/tab_banner"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:scrollIndicators="none"
                 app:tabBackground="@drawable/selector_tab_white"
                 app:tabGravity="center"
                 app:tabIndicator="@null"
                 app:layout_constraintBottom_toBottomOf="@+id/store_nest_scroll"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="@+id/store_nest_scroll"
+                app:layout_constraintEnd_toEndOf="@+id/store_nest_scroll"
                 app:tabPaddingEnd="@dimen/dot_padding"
                 app:tabPaddingStart="@dimen/dot_padding"
                 tools:layout_editor_absoluteY="5dp" />
+
+
+
 
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:layout_width="match_parent"
@@ -64,15 +68,13 @@
                     android:id="@+id/store_home_category_grid"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
                     app:layout_constraintTop_toTopOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
-                    android:paddingRight="30dp"
-                    android:paddingLeft="30dp"
+                    android:paddingRight="15dp"
+                    android:paddingLeft="15dp"
                     android:layout_marginTop="10dp"
                     android:overScrollMode="never"
-                    android:paddingTop="10dp"
                     android:textAlignment="center"/>
 
 

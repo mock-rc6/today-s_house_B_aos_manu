@@ -72,7 +72,7 @@ class StoreHomeFragment : BaseFragment<FragmentStoreHomeBinding>(FragmentStoreHo
         }
 
         TabLayoutMediator(
-            binding.tabStoreBanner,
+            binding.tabBanner,
             binding.storeBannerViewpager
         ){
                 tab, position ->

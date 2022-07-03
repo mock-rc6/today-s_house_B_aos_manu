@@ -6,13 +6,24 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".src.main.store.StoreFragment">
 
+    <ImageView
+        android:id="@+id/store_home_catgory_list"
+        android:layout_width="35dp"
+        android:layout_height="35dp"
+        android:src="@drawable/store_home_list"
+        android:scaleType="fitXY"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginLeft="18dp"
+        android:layout_marginTop="10dp"/>
+
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/store_search_container"
-        android:layout_width="280dp"
+        android:layout_width="240dp"
         android:layout_height="35dp"
         android:background="@drawable/home_search_bg"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/store_home_catgory_list"
         android:layout_marginLeft="18dp"
         android:layout_marginTop="10dp">
 
@@ -32,7 +43,7 @@
             android:layout_height="match_parent"
             android:layout_marginLeft="6dp"
             android:background="@android:color/transparent"
-            android:hint="오늘의집 통합겁색"
+            android:hint="스토어 검색"
             android:textColorHint="@color/light_grey"
             android:textSize="16dp"
             app:layout_constraintBottom_toBottomOf="parent"
@@ -50,7 +61,7 @@
         app:layout_constraintStart_toEndOf="@+id/store_search_container"
         app:layout_constraintTop_toTopOf="@+id/store_search_container"
         app:layout_constraintBottom_toBottomOf="@+id/store_search_container"
-        android:layout_marginLeft="20dp"/>
+        android:layout_marginLeft="15dp"/>
 
     <ImageView
         android:layout_width="32dp"
@@ -59,8 +70,7 @@
         app:layout_constraintStart_toEndOf="@+id/home_tag_btn"
         app:layout_constraintTop_toTopOf="@+id/store_search_container"
         app:layout_constraintBottom_toBottomOf="@+id/store_search_container"
-        app:layout_constraintEnd_toEndOf="parent"
-        android:layout_marginRight="5dp"/>
+        app:layout_constraintEnd_toEndOf="parent" />
 
 
 
