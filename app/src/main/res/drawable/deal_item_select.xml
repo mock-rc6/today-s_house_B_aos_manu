@@ -5,6 +5,6 @@
         android:drawable="@drawable/today_deal_tag_img"/>
 
     <item android:state_checked="false"
-        android:drawable="@drawable/today_deal_untag_img"/>
+        android:drawable="@drawable/home_tag_btn_white"/>
 
 </selector>

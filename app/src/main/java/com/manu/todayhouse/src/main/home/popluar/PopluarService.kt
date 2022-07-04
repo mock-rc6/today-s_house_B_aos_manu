@@ -1,11 +1,11 @@
 package com.manu.todayhouse.src.main.home.popluar
 
 import com.manu.todayhouse.config.ApplicationClass
-import com.manu.todayhouse.src.main.home.popluar.model.BannerData
+import com.manu.todayhouse.src.main.home.popluar.eventpage.model.BannerData
+import com.manu.todayhouse.src.main.home.popluar.model.MainHomeData
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
-import retrofit2.create
 
 class PopluarService(val popluarFragmentInterface: PopluarFragmentInterface) {
 
@@ -28,5 +28,27 @@ class PopluarService(val popluarFragmentInterface: PopluarFragmentInterface) {
             }
         )
 
+    }
+
+    fun getHomeInfo() {
+        val getInfoRetrofitInterface = ApplicationClass.sRetrofit.create(PopluarBannerRetrofitInterface::class.java)
+
+        getInfoRetrofitInterface.getMenuHouseInfo().enqueue(
+            object : Callback<MainHomeData> {
+                override fun onResponse(
+                    call: Call<MainHomeData>,
+                    response: Response<MainHomeData>
+                ) {
+                    if (response.isSuccessful) {
+                        popluarFragmentInterface.onGetHomeInfoSuccess(response.body() as MainHomeData)
+                    }
+                }
+
+                override fun onFailure(call: Call<MainHomeData>, t: Throwable) {
+                    popluarFragmentInterface.onGetHomeInfoFail(t.message ?: "통신 오류")
+                }
+
+            }
+        )
     }
 }

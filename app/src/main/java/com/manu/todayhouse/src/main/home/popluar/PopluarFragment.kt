@@ -3,11 +3,7 @@ package com.manu.todayhouse.src.main.home.popluar
 import android.os.Bundle
 import android.os.Handler
 import android.os.Looper
-import android.util.Log
-import androidx.fragment.app.Fragment
-import android.view.LayoutInflater
 import android.view.View
-import android.view.ViewGroup
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.viewpager2.widget.ViewPager2
 import com.manu.todayhouse.R
@@ -15,8 +11,10 @@ import com.manu.todayhouse.config.BaseFragment
 import com.manu.todayhouse.databinding.FragmentPopluarBinding
 import com.manu.todayhouse.src.main.home.popluar.adapter.PopluarBannerAdapter
 import com.manu.todayhouse.src.main.home.popluar.adapter.PopluarCatgAdapter
-import com.manu.todayhouse.src.main.home.popluar.model.BannerData
-import com.manu.todayhouse.src.main.home.popluar.model.PopluarCategroy
+import com.manu.todayhouse.src.main.home.popluar.adapter.PopluarHomeInfoAdapter
+import com.manu.todayhouse.src.main.home.popluar.eventpage.model.BannerData
+import com.manu.todayhouse.src.main.home.popluar.model.MainHomeData
+import com.manu.todayhouse.src.main.home.popluar.eventpage.model.PopluarCategroy
 
 class PopluarFragment : BaseFragment<FragmentPopluarBinding>(FragmentPopluarBinding::bind, R.layout.fragment_popluar), PopluarFragmentInterface {
 
@@ -25,7 +23,7 @@ class PopluarFragment : BaseFragment<FragmentPopluarBinding>(FragmentPopluarBind
     private val sliderImageRunnable = Runnable { binding.popluarBannerView.currentItem = binding.popluarBannerView.currentItem + 1 }
     private var catgLists = ArrayList<PopluarCategroy>()
     private lateinit var popluarCatgAdapter: PopluarCatgAdapter
-
+    private lateinit var popluarHomeInfoAdapter: PopluarHomeInfoAdapter
 
 
 
@@ -34,6 +32,7 @@ class PopluarFragment : BaseFragment<FragmentPopluarBinding>(FragmentPopluarBind
         super.onViewCreated(view, savedInstanceState)
 
         PopluarService(this@PopluarFragment).getBannerImage()
+        PopluarService(this@PopluarFragment).getHomeInfo()
 
         catgLists.add(PopluarCategroy(R.drawable.home_shopping_btn, "쇼핑하기"))
         catgLists.add(PopluarCategroy(R.drawable.home_quickdel_btn, "빠른배송"))
@@ -87,6 +86,18 @@ class PopluarFragment : BaseFragment<FragmentPopluarBinding>(FragmentPopluarBind
     }
 
     override fun onGetBannerImageFail(message: String) {
+        showCustomToast("오류 : ${message}")
+    }
+
+    override fun onGetHomeInfoSuccess(response: MainHomeData) {
+        popluarHomeInfoAdapter = PopluarHomeInfoAdapter(response.result.getMainHouseInfos)
+        binding.homeInfoRecycler.apply {
+            adapter = popluarHomeInfoAdapter
+            layoutManager = GridLayoutManager(context, 2)
+        }
+    }
+
+    override fun onGetHomeInfoFail(message: String) {
         showCustomToast("오류 : ${message}")
     }
 

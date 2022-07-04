@@ -23,6 +23,8 @@ class TodayDealApater(val todayDeal : List<TodaysDeal>) : RecyclerView.Adapter<T
         val discountPercent = itemView.findViewById<TextView>(R.id.deal_discount_percent)
         val dealPrice = itemView.findViewById<TextView>(R.id.deal_price)
         val tagImg = itemView.findViewById<ImageButton>(R.id.deal_tag_img)
+        val reviewPoint = itemView.findViewById<TextView>(R.id.today_deal_review_point)
+        val reviewCount = itemView.findViewById<TextView>(R.id.review_text_count)
 
         fun onBindWith(todayDealLists : TodaysDeal){
             mainImg.clipToOutline = true
@@ -33,6 +35,8 @@ class TodayDealApater(val todayDeal : List<TodaysDeal>) : RecyclerView.Adapter<T
             itemTitle.text = todayDealLists.itemName
             discountPercent.text = todayDealLists.saleRate
             dealPrice.text = todayDealLists.price
+            reviewPoint.text = todayDealLists.score.toString()
+            reviewCount.text = todayDealLists.reviewNum.toString()
         }
     }
 

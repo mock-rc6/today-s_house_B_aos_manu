@@ -6,7 +6,7 @@ import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.manu.todayhouse.R
-import com.manu.todayhouse.src.main.home.popluar.model.PopluarCategroy
+import com.manu.todayhouse.src.main.home.popluar.eventpage.model.PopluarCategroy
 
 class PopluarCatgAdapter(var CatgList : ArrayList<PopluarCategroy>) : RecyclerView.Adapter<PopluarCatgAdapter.CatgView>() {
 

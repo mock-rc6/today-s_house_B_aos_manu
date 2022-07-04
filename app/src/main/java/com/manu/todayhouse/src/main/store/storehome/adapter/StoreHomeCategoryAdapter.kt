@@ -1,13 +1,12 @@
 package com.manu.todayhouse.src.main.store.storehome.adapter
 
-import android.media.Image
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.manu.todayhouse.R
-import com.manu.todayhouse.src.main.home.popluar.model.PopluarCategroy
+import com.manu.todayhouse.src.main.home.popluar.eventpage.model.PopluarCategroy
 
 class StoreHomeCategoryAdapter(var storeCatList : ArrayList<PopluarCategroy>) : RecyclerView.Adapter<StoreHomeCategoryAdapter.HomeCategoryView>(){
 

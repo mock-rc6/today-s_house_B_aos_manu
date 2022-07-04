@@ -17,6 +17,8 @@
     <color name="much_light_grey">#39CACACA</color>
     <color name="red">#f00</color>
     <color name="today_house_color_light">#6F35C5F0</color>
+    <color name="red_light">#FF7875</color>
+    <color name="too_much_light_grey">#20CAC9C9</color>
 
 
 </resources>
