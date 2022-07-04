@@ -1,8 +1,11 @@
 package com.manu.todayhouse.src
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
 import com.manu.todayhouse.R
+import com.manu.todayhouse.config.ApplicationClass
 import com.manu.todayhouse.config.BaseActivity
 import com.manu.todayhouse.databinding.ActivityMainBinding
 import com.manu.todayhouse.src.main.home.HomeFragment
@@ -22,6 +25,9 @@ class MainActivity : BaseActivity<ActivityMainBinding>(ActivityMainBinding::infl
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         initNavigationBar()
+        val intent = Intent()
+        Log.d("testt", "${ApplicationClass.sSharedPreferences.getLong("userIdNo", 1)}")
+        Log.d("testt" ,"${ApplicationClass.sSharedPreferences.getString("userJWT", "")}")
     }
 
     fun initNavigationBar() {

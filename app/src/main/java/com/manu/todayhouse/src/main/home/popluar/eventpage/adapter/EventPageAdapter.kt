@@ -1,5 +1,6 @@
 package com.manu.todayhouse.src.main.home.popluar.eventpage.adapter
 
+import android.content.Intent
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import android.widget.ImageView
@@ -21,6 +22,7 @@ class EventPageAdapter(val eventList : List<Result>) : RecyclerView.Adapter<Even
         fun onBindWith(eventLists : Result) {
             Glide.with(itemView).load(eventLists.bannerPic).into(eventImg)
             dueText.text = eventLists.due
+
         }
     }
 
@@ -33,6 +35,9 @@ class EventPageAdapter(val eventList : List<Result>) : RecyclerView.Adapter<Even
 
     override fun onBindViewHolder(holder: EventPageView, position: Int) {
         holder.onBindWith(eventList[position])
+        holder.eventImg.setOnClickListener {
+            val intent = Intent()
+        }
     }
 
     override fun getItemCount(): Int {

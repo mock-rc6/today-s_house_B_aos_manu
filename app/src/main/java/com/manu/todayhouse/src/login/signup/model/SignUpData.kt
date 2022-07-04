@@ -7,5 +7,5 @@ data class SignUpData(
     val code: Int,
     val isSuccess: Boolean,
     val message: String,
-    @SerializedName("result") val result : List<RegisterResult>
+    @SerializedName("result") val result : RegisterResult
 )

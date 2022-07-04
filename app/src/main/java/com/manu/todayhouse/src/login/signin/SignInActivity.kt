@@ -69,17 +69,27 @@ class SignInActivity : BaseActivity<ActivitySignInBinding>(ActivitySignInBinding
         val signinRetrofitInterface = ApplicationClass.sRetrofit.create(SignInRetrofitInterface::class.java)
 
         binding.signInBtn.setOnClickListener {
-            userLogin["email"] = email
             userLogin["password"] = password
-            var userJwt = ""
+            userLogin["email"] = email
 
             signinRetrofitInterface.userLogin(userLogin).enqueue(object : Callback<SignUpData>{
                 override fun onResponse(call: Call<SignUpData>, response: Response<SignUpData>) {
                     var userJWT = response.body() as SignUpData
-                    when (userJWT.message) {
-                        "요청에 성공했습니다." -> startActivity(Intent(this@SignInActivity, MainActivity::class.java))
-                        else -> showCustomToast(userJWT.message)
-                    }
+                    val intent = Intent(this@SignInActivity, MainActivity::class.java)
+                    intent.putExtra("UserId", userJWT.result.userId)
+                    startActivity(intent)
+                    val userId = ApplicationClass.sSharedPreferences.edit()
+                    val userJWTNo = ApplicationClass.sSharedPreferences.edit()
+                    userJWTNo.putString("userJWT", userJWT.result.jwt)
+                    userJWTNo.apply()
+                    userId.putLong("userIdNo", userJWT.result.userId)
+                    userId.apply()
+
+//                    when (userJWT.code) {
+//                        1000 -> startActivity(Intent(this@SignInActivity, MainActivity::class.java))
+//                        else -> showCustomToast(userJWT.message)
+//                    }
+
                 }
 
                 override fun onFailure(call: Call<SignUpData>, t: Throwable) {
