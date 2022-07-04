@@ -1,5 +1,6 @@
 package com.manu.todayhouse.src.main.store.storehome
 
+import android.content.Intent
 import android.os.Bundle
 import android.os.Handler
 import android.os.Looper
@@ -10,6 +11,7 @@ import com.google.android.material.tabs.TabLayoutMediator
 import com.manu.todayhouse.R
 import com.manu.todayhouse.config.BaseFragment
 import com.manu.todayhouse.databinding.FragmentStoreHomeBinding
+import com.manu.todayhouse.src.MainActivity
 import com.manu.todayhouse.src.main.home.popluar.eventpage.model.PopluarCategroy
 import com.manu.todayhouse.src.main.store.storehome.adapter.StoreHomeBannerAdapter
 import com.manu.todayhouse.src.main.store.storehome.adapter.StoreHomeCategoryAdapter
@@ -52,6 +54,8 @@ class StoreHomeFragment : BaseFragment<FragmentStoreHomeBinding>(FragmentStoreHo
             adapter = storeHomeCategoryAdapter
             layoutManager = GridLayoutManager(context, 5)
         }
+
+
 
         findCatgLists.add(FindCatgoryData(R.drawable.store_home_find1, "가구", "소파,침대,테이블,거실장,선반,거울"))
         findCatgLists.add(FindCatgoryData(R.drawable.store_home_find2, "패브릭", "침구,커튼,이불,베개"))

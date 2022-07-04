@@ -19,6 +19,7 @@ import com.manu.todayhouse.databinding.ActivitySignInBinding
 import com.manu.todayhouse.databinding.ActivitySignUpBinding
 import com.manu.todayhouse.src.MainActivity
 import com.manu.todayhouse.src.login.LoginActivity
+import com.manu.todayhouse.src.login.signin.repassword.RePasswordActivity
 import com.manu.todayhouse.src.login.signup.SignUpActivity
 import com.manu.todayhouse.src.login.signup.SignupRetrofitInterface
 import com.manu.todayhouse.src.login.signup.model.SignUpData
@@ -48,6 +49,13 @@ class SignInActivity : BaseActivity<ActivitySignInBinding>(ActivitySignInBinding
         loginBtn.isClickable = false
         loginBtn.isEnabled = false
         loginBtn.setBackgroundResource(R.drawable.register_before_finish)
+
+        val rePassword = binding.rePassowrdGo
+
+        rePassword.setOnClickListener {
+            val intent = Intent(this@SignInActivity, RePasswordActivity::class.java)
+            startActivity(intent)
+        }
 
 
         emailLogIn.doAfterTextChanged {

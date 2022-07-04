@@ -1,11 +1,13 @@
 package com.manu.todayhouse.src.main.store.storehome.adapter
 
+import android.content.Intent
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.manu.todayhouse.R
+import com.manu.todayhouse.config.ApplicationClass
 import com.manu.todayhouse.src.main.store.storehome.model.FindCatgoryData
 import kotlinx.android.synthetic.main.store_home_catgory_find_item.view.*
 
@@ -24,6 +26,8 @@ class StoreHomeFindAdpater(val findCatList : List<FindCatgoryData>) : RecyclerVi
             catgImg.setImageResource(findCatLists.imgSrc)
             catgText.text = findCatLists.title
             catgSubText.text = findCatLists.subTitle
+
+
         }
 
 
@@ -40,6 +44,7 @@ class StoreHomeFindAdpater(val findCatList : List<FindCatgoryData>) : RecyclerVi
 
     override fun onBindViewHolder(holder: StoreHomeFindAdpater.HomeFindView, position: Int) {
         holder.onBindWith(findCatList[position])
+
     }
 
     override fun getItemCount(): Int {
