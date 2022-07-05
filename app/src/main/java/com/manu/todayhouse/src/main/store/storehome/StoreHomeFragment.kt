@@ -4,6 +4,7 @@ import android.content.Intent
 import android.os.Bundle
 import android.os.Handler
 import android.os.Looper
+import android.util.Log
 import android.view.View
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.viewpager2.widget.ViewPager2
@@ -57,28 +58,29 @@ class StoreHomeFragment : BaseFragment<FragmentStoreHomeBinding>(FragmentStoreHo
 
 
 
-        findCatgLists.add(FindCatgoryData(R.drawable.store_home_find1, "가구", "소파,침대,테이블,거실장,선반,거울"))
-        findCatgLists.add(FindCatgoryData(R.drawable.store_home_find2, "패브릭", "침구,커튼,이불,베개"))
-        findCatgLists.add(FindCatgoryData(R.drawable.store_home_find3, "가전", "냉장고,TV,세탁기·건조기,에어컨"))
-        findCatgLists.add(FindCatgoryData(R.drawable.store_home_find4, "유아·아동", "매트,기저귀,장난감"))
-        findCatgLists.add(FindCatgoryData(R.drawable.store_home_find5, "조명", "스탠드,무드등,LED"))
-        findCatgLists.add(FindCatgoryData(R.drawable.store_home_find6, "주방용품", "그릇,냄비,후라이펜"))
-        findCatgLists.add(FindCatgoryData(R.drawable.store_home_find7, "데코·식물", "그림,캔들,식물"))
-        findCatgLists.add(FindCatgoryData(R.drawable.store_home_find8, "수납·정리", "리방박스,행거,수납장"))
-        findCatgLists.add(FindCatgoryData(R.drawable.store_home_find9, "생활용품", "욕실,청소,수건·타올"))
-        findCatgLists.add(FindCatgoryData(R.drawable.store_home_find10, "생필품", "세제,화장지,제습·탈취·방향제"))
-        findCatgLists.add(FindCatgoryData(R.drawable.store_home_find11, "공구·DIY", "시트지,손잡이,드릴,드라이버"))
-        findCatgLists.add(FindCatgoryData(R.drawable.store_home_find12, "인테리어시공", "주방,욕실,수도꼭지,빌트인수납"))
-        findCatgLists.add(FindCatgoryData(R.drawable.store_home_find13, "반려동물", "사료,패션,고양이 위생,고양이 패션"))
-        findCatgLists.add(FindCatgoryData(R.drawable.store_home_find14, "캠핑용품", "캠핑가구,텐트·타프,침낭·매트"))
-        findCatgLists.add(FindCatgoryData(R.drawable.store_home_find15, "실내운동", "요가,헬스,필라테스,보호대,체중계"))
-        findCatgLists.add(FindCatgoryData(R.drawable.store_home_find16, "렌탈", "정수기,비데,공기청정기,대형가전"))
+        findCatgLists.add(FindCatgoryData(R.drawable.store_home_find1, "가구", "소파,침대,테이블,거실장,선반,거울",1))
+        findCatgLists.add(FindCatgoryData(R.drawable.store_home_find2, "패브릭", "침구,커튼,이불,베개",2))
+        findCatgLists.add(FindCatgoryData(R.drawable.store_home_find3, "가전", "냉장고,TV,세탁기·건조기,에어컨",3))
+        findCatgLists.add(FindCatgoryData(R.drawable.store_home_find4, "유아·아동", "매트,기저귀,장난감",4))
+        findCatgLists.add(FindCatgoryData(R.drawable.store_home_find5, "조명", "스탠드,무드등,LED",5))
+        findCatgLists.add(FindCatgoryData(R.drawable.store_home_find6, "주방용품", "그릇,냄비,후라이펜",6))
+        findCatgLists.add(FindCatgoryData(R.drawable.store_home_find7, "데코·식물", "그림,캔들,식물",7))
+        findCatgLists.add(FindCatgoryData(R.drawable.store_home_find8, "수납·정리", "리방박스,행거,수납장",8))
+        findCatgLists.add(FindCatgoryData(R.drawable.store_home_find9, "생활용품", "욕실,청소,수건·타올",9))
+        findCatgLists.add(FindCatgoryData(R.drawable.store_home_find10, "생필품", "세제,화장지,제습·탈취·방향제",10))
+        findCatgLists.add(FindCatgoryData(R.drawable.store_home_find11, "공구·DIY", "시트지,손잡이,드릴,드라이버",11))
+        findCatgLists.add(FindCatgoryData(R.drawable.store_home_find12, "인테리어시공", "주방,욕실,수도꼭지,빌트인수납",12))
+        findCatgLists.add(FindCatgoryData(R.drawable.store_home_find13, "반려동물", "사료,패션,고양이 위생,고양이 패션",13))
+        findCatgLists.add(FindCatgoryData(R.drawable.store_home_find14, "캠핑용품", "캠핑가구,텐트·타프,침낭·매트",14))
+        findCatgLists.add(FindCatgoryData(R.drawable.store_home_find15, "실내운동", "요가,헬스,필라테스,보호대,체중계",15))
+        findCatgLists.add(FindCatgoryData(R.drawable.store_home_find16, "렌탈", "정수기,비데,공기청정기,대형가전",16))
 
         storeHomeFindAdpater = StoreHomeFindAdpater(findCatgLists)
 
         binding.categoryRecyclerView.apply {
             adapter = storeHomeFindAdpater
             layoutManager = GridLayoutManager(context, 4)
+
         }
 
     }

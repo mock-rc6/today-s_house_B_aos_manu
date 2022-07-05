@@ -8,6 +8,8 @@ import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.manu.todayhouse.R
+import com.manu.todayhouse.config.ApplicationClass
+import com.manu.todayhouse.src.main.home.popluar.eventpage.eventdetail.EventDetailActivity
 import com.manu.todayhouse.src.main.home.popluar.eventpage.model.Result
 
 class EventPageAdapter(val eventList : List<Result>) : RecyclerView.Adapter<EventPageAdapter.EventPageView>() {
@@ -23,6 +25,17 @@ class EventPageAdapter(val eventList : List<Result>) : RecyclerView.Adapter<Even
             Glide.with(itemView).load(eventLists.bannerPic).into(eventImg)
             dueText.text = eventLists.due
 
+//            eventImg.setOnClickListener {
+//                val intent = Intent(itemView.context, EventDetailActivity::class.java)
+//
+//                itemView.context.startActivity(intent)
+//                val eventId = ApplicationClass.sSharedPreferences.edit()
+//                eventId.putInt("eventId", eventLists.eventId)
+//                eventId.apply()
+//
+//
+//            }
+
         }
     }
 
@@ -36,8 +49,12 @@ class EventPageAdapter(val eventList : List<Result>) : RecyclerView.Adapter<Even
     override fun onBindViewHolder(holder: EventPageView, position: Int) {
         holder.onBindWith(eventList[position])
         holder.eventImg.setOnClickListener {
-            val intent = Intent()
+            val intent = Intent(holder.itemView.context, EventDetailActivity::class.java)
+            intent.putExtra("eventId", eventList[position].eventId)
+            holder.itemView.context.startActivity(intent)
+
         }
+
     }
 
     override fun getItemCount(): Int {

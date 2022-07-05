@@ -1,5 +1,6 @@
 package com.manu.todayhouse.src.main.store.storehome.adapter
 
+import android.content.Intent
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import android.widget.ImageButton
@@ -9,6 +10,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.manu.todayhouse.R
 import com.manu.todayhouse.src.main.store.storehome.model.TodaysDeal
+import com.manu.todayhouse.src.main.store.storehome.productdetailpage.ProductDetailActivity
 import org.w3c.dom.Text
 
 class TodayDealApater(val todayDeal : List<TodaysDeal>) : RecyclerView.Adapter<TodayDealApater.TodayDealView>() {
@@ -50,6 +52,11 @@ class TodayDealApater(val todayDeal : List<TodaysDeal>) : RecyclerView.Adapter<T
 
     override fun onBindViewHolder(holder: TodayDealApater.TodayDealView, position: Int) {
         holder.onBindWith(todayDeal[position])
+        holder.itemView.setOnClickListener {
+            val intent = Intent(holder.itemView.context, ProductDetailActivity::class.java)
+            intent.putExtra("ItemNo", todayDeal[position].itemId)
+            holder.itemView.context.startActivity(intent)
+        }
     }
 
     override fun getItemCount(): Int {

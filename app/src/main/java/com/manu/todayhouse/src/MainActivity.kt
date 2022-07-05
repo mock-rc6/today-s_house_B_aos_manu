@@ -25,9 +25,8 @@ class MainActivity : BaseActivity<ActivityMainBinding>(ActivityMainBinding::infl
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         initNavigationBar()
-        val intent = Intent()
-        Log.d("testt", "${ApplicationClass.sSharedPreferences.getLong("userIdNo", 1)}")
-        Log.d("testt" ,"${ApplicationClass.sSharedPreferences.getString("userJWT", "")}")
+
+
     }
 
     fun initNavigationBar() {

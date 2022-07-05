@@ -82,7 +82,7 @@ class SignInActivity : BaseActivity<ActivitySignInBinding>(ActivitySignInBinding
 
             signinRetrofitInterface.userLogin(userLogin).enqueue(object : Callback<SignUpData>{
                 override fun onResponse(call: Call<SignUpData>, response: Response<SignUpData>) {
-                    var userJWT = response.body() as SignUpData
+                    val userJWT = response.body() as SignUpData
                     val intent = Intent(this@SignInActivity, MainActivity::class.java)
                     intent.putExtra("UserId", userJWT.result.userId)
                     startActivity(intent)

@@ -24,13 +24,16 @@
         android:usesCleartextTraffic="true"
         tools:targetApi="31">
         <activity
-            android:name=".CatgoryActivity"
+            android:name=".src.main.store.storehome.productdetailpage.ProductDetailActivity"
             android:exported="false" />
         <activity
-            android:name=".TestActivity"
+            android:name=".src.main.home.popluar.eventpage.eventdetail.EventDetailActivity"
             android:exported="false" />
         <activity
-            android:name=".ChangePasswordActivity"
+            android:name=".src.main.store.storehome.catgory.CatgoryActivity"
+            android:exported="false" />
+        <activity
+            android:name=".src.login.signin.repassword.chagepaswword.ChangePasswordActivity"
             android:exported="false" />
         <activity
             android:name=".src.login.signin.repassword.RePasswordActivity"

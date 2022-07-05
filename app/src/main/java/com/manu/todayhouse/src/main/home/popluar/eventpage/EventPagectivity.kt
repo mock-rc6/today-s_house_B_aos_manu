@@ -2,6 +2,7 @@ package com.manu.todayhouse.src.main.home.popluar.eventpage
 
 import android.content.Intent
 import android.os.Bundle
+import android.util.Log
 import com.manu.todayhouse.config.ApplicationClass
 import com.manu.todayhouse.config.BaseActivity
 import com.manu.todayhouse.databinding.ActivityEventPageBinding
@@ -10,6 +11,7 @@ import com.manu.todayhouse.src.main.home.popluar.PopluarFragmentInterface
 import com.manu.todayhouse.src.main.home.popluar.PopluarService
 import com.manu.todayhouse.src.main.home.popluar.eventpage.adapter.EventPageAdapter
 import com.manu.todayhouse.src.main.home.popluar.eventpage.model.BannerData
+import com.manu.todayhouse.src.main.home.popluar.eventpage.model.Result
 import com.manu.todayhouse.src.main.home.popluar.model.MainHomeData
 
 class EventPagectivity : BaseActivity<ActivityEventPageBinding>(ActivityEventPageBinding::inflate), EventActivityInterface {
@@ -29,6 +31,7 @@ class EventPagectivity : BaseActivity<ActivityEventPageBinding>(ActivityEventPag
             val intent = Intent(this@EventPagectivity, MainActivity::class.java)
             startActivity(intent)
         }
+
     }
 
     override fun onGetEventBannerImageSuccess(response: BannerData) {
@@ -37,6 +40,7 @@ class EventPagectivity : BaseActivity<ActivityEventPageBinding>(ActivityEventPag
         binding.bannerEventView.apply {
             adapter = eventPageAdapter
         }
+
 
     }
 
