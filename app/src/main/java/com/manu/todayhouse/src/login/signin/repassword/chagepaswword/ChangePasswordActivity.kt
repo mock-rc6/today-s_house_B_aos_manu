@@ -3,6 +3,7 @@ package com.manu.todayhouse.src.login.signin.repassword.chagepaswword
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
 import androidx.core.widget.doAfterTextChanged
 import com.manu.todayhouse.config.ApplicationClass
 import com.manu.todayhouse.config.BaseActivity
@@ -24,6 +25,13 @@ class ChangePasswordActivity : BaseActivity<ActivityChangePasswordBinding>(Activ
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+
+        val exit = binding.exitBack
+
+        exit.setOnClickListener {
+            val intent = Intent(this@ChangePasswordActivity, LoginActivity::class.java)
+            startActivity(intent)
+        }
 
         val changePasswordRetrofit = ApplicationClass.sRetrofit.create(ChangerPasswordRetrofitInterface::class.java)
 
@@ -51,6 +59,7 @@ class ChangePasswordActivity : BaseActivity<ActivityChangePasswordBinding>(Activ
                         } else {
                             val intent = Intent(this@ChangePasswordActivity, LoginActivity::class.java)
                             startActivity(intent)
+                            showCustomToast("비밀번호 변경이 완료되었습니다.")
                         }
                     }
 

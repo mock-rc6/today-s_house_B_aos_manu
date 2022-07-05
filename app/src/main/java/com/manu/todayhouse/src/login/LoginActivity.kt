@@ -22,7 +22,12 @@ class LoginActivity : BaseActivity<ActivityLoginBinding>(ActivityLoginBinding::i
         super.onCreate(savedInstanceState)
 
         binding.facebookLogoImg.clipToOutline = true
-        KaKaoLoginService(this@LoginActivity).getKaKaoId()
+        binding.kakaoTalkLogin.setOnClickListener {
+            val intent = Intent(this@LoginActivity, MainActivity::class.java)
+            KaKaoLoginService(this@LoginActivity).getKaKaoId()
+            startActivity(intent)
+        }
+
 
         binding.loginNaver.setOnClickListener {
             val intent = Intent(this@LoginActivity, MainActivity::class.java)
@@ -103,6 +108,7 @@ class LoginActivity : BaseActivity<ActivityLoginBinding>(ActivityLoginBinding::i
     }
 
     override fun onGetKaKaoIdFail(message: String) {
-        showCustomToast("오류 : ${message}")
+        showCustomToast("오류 : ${message}.")
+        Log.d("testtt", "${message}")
     }
 }
