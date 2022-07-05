@@ -9,7 +9,8 @@
     <androidx.core.widget.NestedScrollView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        app:layout_constraintTop_toTopOf="parent">
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/buying_container">
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
@@ -273,6 +274,158 @@
                 android:layout_marginLeft="10dp"/>
 
 
+            <View
+                android:id="@+id/divie_line_product"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/light_grey"
+                app:layout_constraintTop_toBottomOf="@+id/product_price"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:layout_marginTop="25dp"/>
+
+            <TextView
+                android:id="@+id/point_plus_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toBottomOf="@+id/divie_line_product"
+                app:layout_constraintStart_toStartOf="@+id/product_discount_percent"
+                android:text="혜택"
+                android:layout_marginTop="25dp"/>
+
+            <TextView
+                android:id="@+id/point_plus_count"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintStart_toEndOf="@+id/point_plus_text"
+                app:layout_constraintTop_toTopOf="@+id/point_plus_text"
+                android:text="52P"
+                android:textColor="@color/black"
+                android:textStyle="bold"
+                android:layout_marginLeft="15dp"/>
+
+            <TextView
+                android:id="@+id/product_benifit"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintStart_toEndOf="@+id/point_plus_count"
+                app:layout_constraintTop_toTopOf="@+id/point_plus_text"
+                android:text="적립"
+                android:textColor="@color/black" />
+
+            <TextView
+                android:id="@+id/product_benifit_level"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintStart_toEndOf="@+id/product_benifit"
+                app:layout_constraintTop_toTopOf="@+id/point_plus_text"
+                android:text="(WELCOME 0.3% 적립)"
+                android:textColor="@color/black" />
+
+            <TextView
+                android:id="@+id/product_deliver_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toBottomOf="@+id/point_plus_text"
+                app:layout_constraintStart_toStartOf="@+id/product_discount_percent"
+                android:text="배송"
+                android:layout_marginTop="25dp"/>
+
+            <TextView
+                android:id="@+id/product_deliver_price"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintStart_toEndOf="@+id/point_plus_text"
+                app:layout_constraintTop_toTopOf="@+id/product_deliver_text"
+                android:text="2500원"
+                android:textColor="@color/black"
+                android:textStyle="bold"
+                android:layout_marginLeft="15dp"/>
+
+
+
+            <TextView
+                android:id="@+id/product_deliver_limit"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintStart_toEndOf="@+id/product_benifit"
+                app:layout_constraintTop_toTopOf="@+id/product_deliver_text"
+                android:text="(50,000원 이상 무료배송)"
+                android:textColor="@color/black" />
+
+            <View
+                android:id="@+id/divie_line_product2"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/light_grey"
+                app:layout_constraintTop_toBottomOf="@+id/product_deliver_limit"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:layout_marginTop="25dp"/>
+
+            <ImageView
+                android:id="@+id/company_img"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:src="@drawable/today_house"
+                app:layout_constraintTop_toBottomOf="@+id/divie_line_product2"
+                app:layout_constraintStart_toStartOf="@+id/product_discount_percent"
+                android:layout_marginTop="15dp"/>
+
+            <TextView
+                android:id="@+id/brand_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="마켓비"
+                android:textColor="@color/grey"
+                android:textStyle="bold"
+                android:textSize="16dp"
+                app:layout_constraintStart_toEndOf="@+id/company_img"
+                app:layout_constraintTop_toTopOf="@+id/company_img"
+                app:layout_constraintBottom_toBottomOf="@+id/company_img"
+                android:gravity="center"
+                android:layout_marginTop="3dp"
+                android:layout_marginLeft="10dp"/>
+
+
+            <FrameLayout
+                android:id="@+id/brand_home_container"
+                android:layout_width="80dp"
+                android:layout_height="45dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/company_img"
+                android:background="@drawable/brand_detail_bg"
+                android:layout_marginRight="15dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="브랜드홈"
+                    android:textSize="15dp"
+                    android:textColor="@color/grey"
+                    android:layout_gravity="center|start"
+                    android:layout_marginLeft="5dp"/>
+
+                <ImageView
+                    android:layout_width="18dp"
+                    android:layout_height="18dp"
+                    android:layout_marginTop="1dp"
+                    android:src="@drawable/right_arrow"
+                    android:layout_gravity="end|center"/>
+
+
+
+            </FrameLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="100dp"
+                android:background="@color/white"
+                app:layout_constraintTop_toBottomOf="@+id/brand_home_container"/>
+
+
+
+
 
 
 
@@ -284,6 +437,7 @@
     </androidx.core.widget.NestedScrollView>
 
     <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/buying_container"
         android:layout_width="match_parent"
         android:layout_height="60dp"
         app:layout_constraintBottom_toBottomOf="parent"

@@ -63,6 +63,8 @@ class ProductDetailActivity : BaseActivity<ActivityProductDetailBinding>(Activit
                     val productPrice = binding.productPrice
                     val reviewCount = binding.reviewCountProduct
                     val scrapCount = binding.scrapCount
+                    val brandName = binding.brandName
+                    val pointPlus = binding.pointPlusCount
 
 
                     productTitle.text = result.itemName
@@ -72,6 +74,8 @@ class ProductDetailActivity : BaseActivity<ActivityProductDetailBinding>(Activit
                     productPrice.text = result.price
                     scrapCount.text = result.scrapCnt.toString()
                     reviewCount.text = "(" + result.reviewCnt.toString() + ")"
+                    brandName.text = result.companyName
+                    pointPlus.text = (result.price.toInt()/1000*3).toString()
 
 
 
@@ -80,7 +84,7 @@ class ProductDetailActivity : BaseActivity<ActivityProductDetailBinding>(Activit
                 }
 
                 override fun onFailure(call: Call<ProductDetailData>, t: Throwable) {
-                    TODO("Not yet implemented")
+                    showCustomToast(t.message ?: "통신 오류")
                 }
 
             }
