@@ -48,3 +48,15 @@
 1. 배너 GET API 불러오기 완료
 2. 상세 UI 수정
 3. 팔로우 페이지 UI 수정 완료
+
+#7/4일 개발일지
+1. Mypage UI 빌드 시작
+2. Mypage API 연결완료
+3. Store Home 세부적 UI 추가 완료
+
+#7/5일 개발일지
+1. 비밀변호 변경 API 연결
+2. Myshopping API 연결 및 상세 UI 빌드
+3. 이벤트 상세페이지 API 구현완료
+4. 상품상세페이지 UI 및 API 연동 완료
+5. KaKaoLogin API 연결시 Error 수정중
