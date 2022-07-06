@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="80dp"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <TextView
+        android:id="@+id/option_number"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="1"
+        android:textSize="18dp"
+        android:textColor="@color/grey"
+        android:textStyle="bold"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginLeft="15dp"/>
+
+    <ImageView
+        android:id="@+id/option_thumnail"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/option_number"
+        android:layout_marginLeft="25dp"/>
+
+    <TextView
+        android:id="@+id/option_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="베이지색"
+        android:textSize="18dp"
+        app:layout_constraintTop_toTopOf="@id/option_thumnail"
+        app:layout_constraintStart_toEndOf="@id/option_thumnail"
+        android:layout_marginLeft="15dp"/>
+
+    <TextView
+        android:id="@+id/choose_discount_percent"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@+id/option_name"
+        app:layout_constraintStart_toStartOf="@+id/option_name"
+        android:text="72%"
+        android:textSize="20dp"
+        android:textColor="@color/today_house_color"
+        android:textStyle="bold"
+        android:layout_marginTop="5dp"/>
+
+    <TextView
+        android:id="@+id/product_price_choose"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toEndOf="@+id/choose_discount_percent"
+        app:layout_constraintTop_toTopOf="@+id/choose_discount_percent"
+        android:text="198,500원"
+        android:textSize="20dp"
+        android:textStyle="bold"
+        android:textColor="@color/black"
+        android:layout_marginLeft="2dp"/>
+
+    <TextView
+        android:id="@+id/free_delivery_choose"
+        android:layout_width="45dp"
+        android:layout_height="15dp"
+        android:text="무료배송"
+        android:background="@drawable/today_deal_btm1"
+        android:textSize="10dp"
+        android:textColor="@color/black"
+        android:gravity="center"
+        app:layout_constraintTop_toTopOf="@+id/product_price_choose"
+        app:layout_constraintStart_toEndOf="@+id/product_price_choose"
+        android:layout_marginTop="10dp"/>
+
+    <TextView
+        android:id="@+id/deal_price_choose"
+        android:layout_width="25dp"
+        android:layout_height="15dp"
+        android:background="@drawable/today_deal_text_bg"
+        android:text="특가"
+        android:textColor="@color/white"
+        android:textSize="10dp"
+        android:gravity="center"
+        app:layout_constraintStart_toEndOf="@+id/free_delivery_choose"
+        app:layout_constraintTop_toTopOf="@+id/free_delivery_choose"
+        app:layout_constraintBottom_toBottomOf="@+id/free_delivery_choose"
+        android:layout_marginLeft="3dp"/>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/much_light_grey"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

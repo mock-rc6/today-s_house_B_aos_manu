@@ -102,7 +102,6 @@ class LoginActivity : BaseActivity<ActivityLoginBinding>(ActivityLoginBinding::i
     override fun onGetKaKaoIdSuccess(response: KaKaoTalkLoginData) {
         binding.kakaoTalkLogin.setOnClickListener {
             val intent = Intent(this@LoginActivity, MainActivity::class.java)
-            intent.putExtra("KaKaoUserID", "${response.result.userId}")
             startActivity(intent)
         }
     }

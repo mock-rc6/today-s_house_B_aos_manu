@@ -4,13 +4,14 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".src.main.store.storehome.productdetailpage.ProductDetailActivity">
+    tools:context=".src.main.store.storehome.productdetailpage.ProductDetailActivity"
+    android:id="@+id/product_detail_all">
 
-    <androidx.core.widget.NestedScrollView
+    <com.manu.todayhouse.config.StickyScroll
+        android:id="@+id/sticky_scroll"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintBottom_toTopOf="@+id/buying_container">
+        app:layout_constraintTop_toTopOf="parent">
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
@@ -278,7 +279,7 @@
                 android:id="@+id/divie_line_product"
                 android:layout_width="match_parent"
                 android:layout_height="1dp"
-                android:background="@color/light_grey"
+                android:background="@color/much_light_grey"
                 app:layout_constraintTop_toBottomOf="@+id/product_price"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
@@ -357,7 +358,7 @@
                 android:id="@+id/divie_line_product2"
                 android:layout_width="match_parent"
                 android:layout_height="1dp"
-                android:background="@color/light_grey"
+                android:background="@color/much_light_grey"
                 app:layout_constraintTop_toBottomOf="@+id/product_deliver_limit"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
@@ -391,7 +392,8 @@
             <FrameLayout
                 android:id="@+id/brand_home_container"
                 android:layout_width="80dp"
-                android:layout_height="45dp"
+                android:layout_height="40dp"
+                android:paddingLeft="2dp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toTopOf="@+id/company_img"
                 android:background="@drawable/brand_detail_bg"
@@ -404,7 +406,7 @@
                     android:textSize="15dp"
                     android:textColor="@color/grey"
                     android:layout_gravity="center|start"
-                    android:layout_marginLeft="5dp"/>
+                    android:layout_marginStart="7dp"/>
 
                 <ImageView
                     android:layout_width="18dp"
@@ -417,11 +419,61 @@
 
             </FrameLayout>
 
+            <ImageView
+                android:id="@+id/today_deal_ad"
+                android:layout_width="match_parent"
+                android:layout_height="80dp"
+                android:scaleType="fitXY"
+                android:src="@drawable/today_ad_detial"
+                app:layout_constraintTop_toBottomOf="@+id/brand_home_container"
+                android:layout_marginTop="10dp"/>
+
+
+            <ImageView
+                android:id="@+id/first_picture"
+                android:layout_width="match_parent"
+                android:layout_height="150dp"
+                android:src="@drawable/first_pic"
+                android:layout_marginTop="10dp"
+                app:layout_constraintTop_toBottomOf="@+id/today_deal_ad"/>
+
+
+            <com.google.android.material.tabs.TabLayout
+                android:id="@+id/detail_tab_layout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toBottomOf="@+id/first_picture"
+                android:orientation="horizontal"
+                app:tabSelectedTextColor="@color/today_house_color"
+                app:tabTextColor="@color/black"
+                android:background="@color/white"
+                app:tabIndicatorColor="@color/today_house_color"
+                app:tabIndicatorHeight="2dp"
+                app:tabTextAppearance="@style/tab_text"
+                app:tabRippleColor="@android:color/transparent"
+                app:layout_constraintStart_toStartOf="parent">
+
+
+
+            </com.google.android.material.tabs.TabLayout>
+
+            <androidx.viewpager2.widget.ViewPager2
+                android:id="@+id/detail_view_pager2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_constraintTop_toBottomOf="@+id/detail_tab_layout"
+                android:overScrollMode="never"/>
+
+
+
             <View
                 android:layout_width="match_parent"
-                android:layout_height="100dp"
+                android:layout_height="150dp"
                 android:background="@color/white"
-                app:layout_constraintTop_toBottomOf="@+id/brand_home_container"/>
+                app:layout_constraintTop_toBottomOf="@+id/detail_view_pager2"/>
+
+
 
 
 
@@ -434,12 +486,13 @@
 
 
 
-    </androidx.core.widget.NestedScrollView>
+    </com.manu.todayhouse.config.StickyScroll>
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/buying_container"
         android:layout_width="match_parent"
         android:layout_height="60dp"
+        android:background="@color/white"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent">
@@ -457,7 +510,7 @@
         <Button
             android:id="@+id/buying_btn"
             android:layout_width="340dp"
-            android:layout_height="50dp"
+            android:layout_height="45dp"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
@@ -483,6 +536,12 @@
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <FrameLayout
+        android:id="@+id/buying_frame"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="@+id/buying_container"/>
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

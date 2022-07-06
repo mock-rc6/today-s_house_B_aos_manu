@@ -38,7 +38,7 @@ class KaKaoLoginService(val loginActivityInterface: LoginActivityInterface) {
             .addConverterFactory(GsonConverterFactory.create(gson)).build()
         val loginKaKao = kRetrofit.create(LogInRetrofitInterface::class.java)
 
-        loginKaKao.userLogin("f0510e9495bfefc35fcb0e04f193fdd8","https://rc-rising-test-6th.shop/oauth/kakao&response_type=code").enqueue(
+        loginKaKao.userLogin("f0510e9495bfefc35fcb0e04f193fdd8","https://rc-rising-test-6th.shop/oauth/kakao", "code").enqueue(
             object : Callback<KaKaoTalkLoginData> {
                 override fun onResponse(
                     call: Call<KaKaoTalkLoginData>,

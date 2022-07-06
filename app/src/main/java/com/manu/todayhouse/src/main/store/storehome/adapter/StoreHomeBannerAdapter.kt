@@ -17,7 +17,7 @@ class StoreHomeBannerAdapter(private val bannerImage : List<EventImgs>) : Recycl
 
         fun onBindWith(ImageLists : EventImgs) {
             storeBanner.clipToOutline = true
-            Glide.with(itemView).load(ImageLists.storeEventImgUrl).into(storeBanner)
+            Glide.with(itemView).load(ImageLists.storeEventImgUrl).override(4000, 4000).into(storeBanner)
 
         }
     }
