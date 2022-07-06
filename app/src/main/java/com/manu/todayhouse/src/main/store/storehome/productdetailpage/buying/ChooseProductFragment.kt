@@ -14,6 +14,7 @@ import com.manu.todayhouse.src.main.store.storehome.productdetailpage.ProductDet
 import com.manu.todayhouse.src.main.store.storehome.productdetailpage.buying.adapter.ChooseOptionAdapter
 import com.manu.todayhouse.src.main.store.storehome.productdetailpage.buying.model.CardAdd
 import com.manu.todayhouse.src.main.store.storehome.productdetailpage.buying.model.CartOptionData
+import com.manu.todayhouse.src.main.store.storehome.productdetailpage.buying.model.ResultX
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
@@ -35,11 +36,15 @@ class ChooseProductFragment : BaseFragment<FragmentChooseProductBinding>(Fragmen
             binding.optionItem.visibility = View.VISIBLE
         }
 
+        binding.optionItemDown.setOnClickListener {
+            binding.optionItem.visibility = View.GONE
+        }
 
 
 
 
-        Log.d("testtt", "${ApplicationClass.sSharedPreferences.getLong("ItemNo", 100)}")
+
+
 
         binding.stopRemoveView.setOnClickListener {
             val intent = Intent(context, ProductDetailActivity::class.java)
@@ -89,6 +94,21 @@ class ChooseProductFragment : BaseFragment<FragmentChooseProductBinding>(Fragmen
         chooseOptionAdapter = ChooseOptionAdapter(response.result)
         optionItem.apply {
             adapter = chooseOptionAdapter
+            chooseOptionAdapter.setOnItemClickListener(
+                object : ChooseOptionAdapter.onItemClickListener{
+                    override fun onItemClick(v: View, data: ResultX, pos: Int) {
+
+                        when (pos) {
+                            0 -> optionItem.visibility = View.GONE
+                            else -> optionItem.visibility = View.GONE
+
+                        }
+                        Log.d("testtt", "${ApplicationClass.sSharedPreferences.getLong("optionId", 100)}")
+
+                    }
+
+                }
+            )
         }
     }
 

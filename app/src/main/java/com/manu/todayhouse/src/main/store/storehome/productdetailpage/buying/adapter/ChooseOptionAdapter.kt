@@ -3,6 +3,7 @@ package com.manu.todayhouse.src.main.store.storehome.productdetailpage.buying.ad
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.AdapterView
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
@@ -23,6 +24,7 @@ class ChooseOptionAdapter(val chooseList : List<ResultX>) : RecyclerView.Adapter
         val price = itemView.findViewById<TextView>(R.id.product_price_choose)
         val delivery = itemView.findViewById<TextView>(R.id.free_delivery_choose)
         val deal = itemView.findViewById<TextView>(R.id.deal_price_choose)
+        val pos = adapterPosition
 
         fun onBindWith(chooseLists : ResultX){
             Glide.with(itemView.context).load(chooseLists.thumbnail).into(optionThunmail)
@@ -32,13 +34,29 @@ class ChooseOptionAdapter(val chooseList : List<ResultX>) : RecyclerView.Adapter
             delivery.text = chooseLists.delivery
             deal.text = chooseLists.specialPrice
 
-            itemView.setOnClickListener {
-                val optionId = ApplicationClass.sSharedPreferences.edit()
-                optionId.putLong("optionId", chooseLists.optionId)
-                optionId.apply()
+            if (pos != RecyclerView.NO_POSITION){
+                itemView.setOnClickListener {
+                    val optionId = ApplicationClass.sSharedPreferences.edit()
+                    optionId.putLong("optionId", chooseLists.optionId)
+                    optionId.apply()
+                    listener?.onItemClick(itemView, chooseLists, pos)
+                }
+
             }
+
+
         }
 
+    }
+
+    interface onItemClickListener {
+        fun onItemClick(v : View, data : ResultX, pos : Int)
+
+    }
+    private var listener : onItemClickListener? = null
+
+    fun setOnItemClickListener(listener : onItemClickListener) {
+        this.listener = listener
     }
 
     override fun onCreateViewHolder(
