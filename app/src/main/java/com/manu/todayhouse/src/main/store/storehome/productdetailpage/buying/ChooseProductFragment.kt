@@ -55,7 +55,7 @@ class ChooseProductFragment : BaseFragment<FragmentChooseProductBinding>(Fragmen
             startActivity(intent)
         }
 
-        cartAddHash["optionId"] = 1
+        cartAddHash["optionId"] = ApplicationClass.sSharedPreferences.getLong("optionId", 1)
         cartAddHash["number"] = 1
 
         binding.addCart.setOnClickListener {
@@ -106,9 +106,8 @@ class ChooseProductFragment : BaseFragment<FragmentChooseProductBinding>(Fragmen
         chooseOptionAdapter.setOnItemClickListener(
             object : ChooseOptionAdapter.onItemClickListener{
                 override fun onItemClick(v: View, data: ResultX, pos: Int) {
-                    if(v.isSelected){
-                        showCustomToast("data : ${data} , pos : $pos")
-                    }
+                    binding.allPrice.text = result[0].saledPrice
+                    optionItem.visibility = View.GONE
                 }
 
             }
