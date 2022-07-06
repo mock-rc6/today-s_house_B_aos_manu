@@ -4,6 +4,7 @@ import android.content.Intent
 import android.os.Bundle
 import android.util.Log
 import android.view.View
+import android.widget.Toast
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.bumptech.glide.Glide
 import com.manu.todayhouse.R
@@ -34,6 +35,9 @@ class ChooseProductFragment : BaseFragment<FragmentChooseProductBinding>(Fragmen
 
         binding.optionChooseCheck.setOnClickListener {
             binding.optionItem.visibility = View.VISIBLE
+            binding.optionItem.isClickable = true
+            binding.optionItem.isEnabled = true
+            binding.optionItem.isSelected = true
         }
 
         binding.optionItemDown.setOnClickListener {
@@ -94,16 +98,21 @@ class ChooseProductFragment : BaseFragment<FragmentChooseProductBinding>(Fragmen
         chooseOptionAdapter = ChooseOptionAdapter(response.result)
         optionItem.apply {
             adapter = chooseOptionAdapter
-            chooseOptionAdapter.setOnItemClickListener(
-                object : ChooseOptionAdapter.onItemClickListener{
-                    override fun onItemClick(v: View, data: ResultX, pos: Int) {
-
-
-                    }
-
-                }
-            )
         }
+
+        Log.d("Testt", "${ApplicationClass.sSharedPreferences.getLong("optionId", 100)}")
+
+
+        chooseOptionAdapter.setOnItemClickListener(
+            object : ChooseOptionAdapter.onItemClickListener{
+                override fun onItemClick(v: View, data: ResultX, pos: Int) {
+                    if(v.isSelected){
+                        showCustomToast("data : ${data} , pos : $pos")
+                    }
+                }
+
+            }
+        )
     }
 
     override fun CartAddFail(message: String) {

@@ -147,7 +147,7 @@
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/option_item"
             android:layout_width="match_parent"
-            android:layout_height="400dp"
+            android:layout_height="wrap_content"
             android:orientation="vertical"
             app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
             app:layout_constraintBottom_toTopOf="@+id/choose_text_container"

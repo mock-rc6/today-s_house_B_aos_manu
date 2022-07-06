@@ -6,6 +6,7 @@ import android.view.ViewGroup
 import android.widget.AdapterView
 import android.widget.ImageView
 import android.widget.TextView
+import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.manu.todayhouse.R
@@ -25,6 +26,7 @@ class ChooseOptionAdapter(val chooseList : List<ResultX>) : RecyclerView.Adapter
         val delivery = itemView.findViewById<TextView>(R.id.free_delivery_choose)
         val deal = itemView.findViewById<TextView>(R.id.deal_price_choose)
         val pos = adapterPosition
+        val allChoiceContainer: ConstraintLayout = itemView.findViewById<ConstraintLayout>(R.id.all_choice_container)
 
         fun onBindWith(chooseLists : ResultX){
             Glide.with(itemView.context).load(chooseLists.thumbnail).into(optionThunmail)
@@ -34,15 +36,16 @@ class ChooseOptionAdapter(val chooseList : List<ResultX>) : RecyclerView.Adapter
             delivery.text = chooseLists.delivery
             deal.text = chooseLists.specialPrice
 
-            if (pos != RecyclerView.NO_POSITION){
-                itemView.setOnClickListener {
-                    val optionId = ApplicationClass.sSharedPreferences.edit()
-                    optionId.putLong("optionId", chooseLists.optionId)
-                    optionId.apply()
-                    listener?.onItemClick(itemView, chooseLists, pos)
-                }
-
-            }
+//            if (pos != RecyclerView.NO_POSITION){
+//                allChoiceContainer.setOnClickListener {
+//                    val optionId = ApplicationClass.sSharedPreferences.edit()
+//                    optionId.putLong("optionId", chooseLists.optionId)
+//                    optionId.apply()
+////                    listener?.onItemClick(itemView, chooseLists, pos)
+//                    it.visibility = View.GONE
+//                }
+//
+//            }
 
 
         }
@@ -70,6 +73,12 @@ class ChooseOptionAdapter(val chooseList : List<ResultX>) : RecyclerView.Adapter
     override fun onBindViewHolder(holder: ChooseOptionAdapter.OptionView, position: Int) {
         holder.onBindWith(chooseList[position])
         holder.optionNumber.text = (position + 1).toString()
+        holder.allChoiceContainer.setOnClickListener {
+            val optionId = ApplicationClass.sSharedPreferences.edit()
+            optionId.putLong("optionId", chooseList[position].optionId)
+            optionId.apply()
+            it.isSelected = true
+        }
     }
 
 
