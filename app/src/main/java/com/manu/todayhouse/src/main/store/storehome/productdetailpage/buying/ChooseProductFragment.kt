@@ -98,12 +98,6 @@ class ChooseProductFragment : BaseFragment<FragmentChooseProductBinding>(Fragmen
                 object : ChooseOptionAdapter.onItemClickListener{
                     override fun onItemClick(v: View, data: ResultX, pos: Int) {
 
-                        when (pos) {
-                            0 -> optionItem.visibility = View.GONE
-                            else -> optionItem.visibility = View.GONE
-
-                        }
-                        Log.d("testtt", "${ApplicationClass.sSharedPreferences.getLong("optionId", 100)}")
 
                     }
 
