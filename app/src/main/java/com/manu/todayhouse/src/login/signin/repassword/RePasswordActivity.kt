@@ -11,13 +11,17 @@ import com.manu.todayhouse.src.login.signin.repassword.chagepaswword.ChangePassw
 
 class RePasswordActivity : BaseActivity<ActivityRePasswordBinding>(ActivityRePasswordBinding::inflate) {
 
+
     private var email : String = ""
-    val emailcheck = binding.reEmailCheck
-    val recheckPassword = binding.reCheckPassword
-    val recheckBtn = binding.reCheckBtn
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+
+
+        val emailchecking = binding.reEmailCheck
+        val recheckPassword = binding.reCheckPassword
+        val recheckBtn = binding.reCheckBtn
 
         recheckPassword.isEnabled = false
         recheckPassword.isClickable = false
@@ -27,7 +31,7 @@ class RePasswordActivity : BaseActivity<ActivityRePasswordBinding>(ActivityRePas
         recheckBtn.isClickable = false
 
 
-        emailcheck.doAfterTextChanged {
+        emailchecking.doAfterTextChanged {
             email = it.toString()
             if (!android.util.Patterns.EMAIL_ADDRESS.matcher(email).matches()){
                 recheckPassword.isEnabled = false

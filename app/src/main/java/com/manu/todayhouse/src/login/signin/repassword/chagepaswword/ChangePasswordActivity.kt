@@ -54,7 +54,7 @@ class ChangePasswordActivity : BaseActivity<ActivityChangePasswordBinding>(Activ
 
                     binding.registerEmail.setOnClickListener {
                         rePassword["password"] = pw
-                        if (Pattern.compile(pwValidation).matcher(pw).matches() || pw.length <= 8 || pw == pwCheck){
+                        if (Pattern.compile(pwValidation).matcher(pw).matches() || pw.length <= 8 || pw != pwCheck){
                             showCustomToast("비밀번호를 확인해 주세요!")
                         } else {
                             val intent = Intent(this@ChangePasswordActivity, LoginActivity::class.java)
