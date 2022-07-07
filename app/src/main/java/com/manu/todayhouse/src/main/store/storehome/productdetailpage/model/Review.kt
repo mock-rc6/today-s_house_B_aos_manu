@@ -4,7 +4,7 @@ data class Review(
     val buyAt: String,
     val createdAt: String,
     val description: String,
-    val imgList: List<String>,
+    val img: String,
     val itemName: String,
     val profilePic: String,
     val score: Double,

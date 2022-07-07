@@ -4,8 +4,6 @@ import android.content.Intent
 import android.os.Bundle
 import android.util.Log
 import android.view.View
-import android.widget.Toast
-import androidx.recyclerview.widget.LinearLayoutManager
 import com.bumptech.glide.Glide
 import com.manu.todayhouse.R
 import com.manu.todayhouse.config.ApplicationClass
@@ -13,22 +11,31 @@ import com.manu.todayhouse.config.BaseFragment
 import com.manu.todayhouse.databinding.FragmentChooseProductBinding
 import com.manu.todayhouse.src.main.store.storehome.productdetailpage.ProductDetailActivity
 import com.manu.todayhouse.src.main.store.storehome.productdetailpage.buying.adapter.ChooseOptionAdapter
+import com.manu.todayhouse.src.main.store.storehome.productdetailpage.buying.adapter.ChooseSelectedAdpater
 import com.manu.todayhouse.src.main.store.storehome.productdetailpage.buying.model.CardAdd
 import com.manu.todayhouse.src.main.store.storehome.productdetailpage.buying.model.CartOptionData
 import com.manu.todayhouse.src.main.store.storehome.productdetailpage.buying.model.ResultX
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
-import retrofit2.create
 
 
 class ChooseProductFragment : BaseFragment<FragmentChooseProductBinding>(FragmentChooseProductBinding::bind, R.layout.fragment_choose_product), ChooseproductFragmentInterface {
 
     private var cartAddHash = HashMap<String, Any>()
     private lateinit var chooseOptionAdapter: ChooseOptionAdapter
+    private lateinit var chooseSelectedAdpater: ChooseSelectedAdpater
+
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+
+        binding.optionNameChoose.visibility = View.GONE
+        binding.chooseDiscountPercentChoose.visibility = View.GONE
+        binding.productPriceChoose.visibility = View.GONE
+        binding.freeDeliveryChooseProduct.visibility = View.GONE
+        binding.dealPriceChoose.visibility = View.GONE
+        binding.optionItemSelected.visibility = View.GONE
 
         binding.optionItem.visibility = View.GONE
         ChooseProductService(this).getCartOption()
@@ -38,10 +45,13 @@ class ChooseProductFragment : BaseFragment<FragmentChooseProductBinding>(Fragmen
             binding.optionItem.isClickable = true
             binding.optionItem.isEnabled = true
             binding.optionItem.isSelected = true
+            binding.optionItemSelected.visibility = View.GONE
+            binding.chooseTextContainer.visibility = View.GONE
         }
 
         binding.optionItemDown.setOnClickListener {
             binding.optionItem.visibility = View.GONE
+            binding.optionItemSelected.visibility = View.VISIBLE
         }
 
 
@@ -100,14 +110,60 @@ class ChooseProductFragment : BaseFragment<FragmentChooseProductBinding>(Fragmen
             adapter = chooseOptionAdapter
         }
 
+
+
+
+
+
+
+
         Log.d("Testt", "${ApplicationClass.sSharedPreferences.getLong("optionId", 100)}")
 
 
         chooseOptionAdapter.setOnItemClickListener(
             object : ChooseOptionAdapter.onItemClickListener{
                 override fun onItemClick(v: View, data: ResultX, pos: Int) {
-                    binding.allPrice.text = result[0].saledPrice
+                    binding.allPrice.text = result[pos].saledPrice + "원"
                     optionItem.visibility = View.GONE
+                    binding.optionNameChoose.visibility = View.VISIBLE
+                    binding.chooseDiscountPercentChoose.visibility = View.VISIBLE
+                    binding.productPriceChoose.visibility = View.VISIBLE
+                    binding.freeDeliveryChooseProduct.visibility = View.VISIBLE
+                    binding.dealPriceChoose.visibility = View.VISIBLE
+                    binding.chooseProudctNameText.visibility = View.GONE
+                    binding.chooseTextContainer.visibility = View.VISIBLE
+
+                    binding.optionNameChoose.text = data.optionName
+                    binding.chooseDiscountPercentChoose.text = data.saleRate
+                    binding.productPriceChoose.text = data.saledPrice
+                    binding.freeDeliveryChooseProduct.text = data.delivery
+                    binding.dealPriceChoose.text = data.specialPrice
+
+
+
+
+
+                    chooseSelectedAdpater = ChooseSelectedAdpater(listOf(data))
+
+                    binding.optionItemSelected.apply {
+                        adapter = chooseSelectedAdpater
+                    }
+
+                    binding.optionItemSelected.visibility = View.VISIBLE
+
+
+
+                    chooseSelectedAdpater.setOnItemClickListener(
+                        object : ChooseSelectedAdpater.onItemClickListener{
+                            override fun onItemClick(v: View, data: ResultX, pos: Int) {
+
+                            }
+
+                        }
+                    )
+
+
+
                 }
 
             }
