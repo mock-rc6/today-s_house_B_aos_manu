@@ -1,5 +1,6 @@
 package com.manu.todayhouse.src.main.store.storehome.productdetailpage
 
+import android.content.Intent
 import android.os.Bundle
 import android.util.Log
 import android.view.View
@@ -12,6 +13,7 @@ import com.manu.todayhouse.R
 import com.manu.todayhouse.config.ApplicationClass
 import com.manu.todayhouse.config.BaseActivity
 import com.manu.todayhouse.databinding.ActivityProductDetailBinding
+import com.manu.todayhouse.src.main.mypage.cart.CartSaveActivity
 import com.manu.todayhouse.src.main.store.storehome.productdetailpage.buying.ChooseProductFragment
 import com.manu.todayhouse.src.main.store.storehome.productdetailpage.adapter.ProductDetailViewAdapter
 import com.manu.todayhouse.src.main.store.storehome.productdetailpage.adapter.ProductViewPagerAdapter
@@ -27,6 +29,11 @@ class ProductDetailActivity : BaseActivity<ActivityProductDetailBinding>(Activit
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+
+        binding.productBuket.setOnClickListener {
+            val intent = Intent(this@ProductDetailActivity, CartSaveActivity::class.java)
+            startActivity(intent)
+        }
 
         val detailTab = binding.detailTabLayout
         val detailViewPager = binding.detailViewPager2

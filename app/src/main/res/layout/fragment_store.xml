@@ -64,6 +64,7 @@
         android:layout_marginLeft="15dp"/>
 
     <ImageView
+        android:id="@+id/store_cart_btn"
         android:layout_width="32dp"
         android:layout_height="32dp"
         android:src="@drawable/home_buket_btn"

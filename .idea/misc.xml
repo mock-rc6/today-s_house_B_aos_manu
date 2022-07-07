@@ -3,95 +3,60 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
-        <entry key="..\:/Users/HPNRT/Desktop/rising_test/today-s_house_B_aos_manu/app/src/main/res/drawable/activity_warning_sign_up.xml" value="0.204" />
-        <entry key="..\:/Users/HPNRT/Desktop/rising_test/today-s_house_B_aos_manu/app/src/main/res/drawable/banner_bg.xml" value="0.177" />
-        <entry key="..\:/Users/HPNRT/Desktop/rising_test/today-s_house_B_aos_manu/app/src/main/res/drawable/btm_home_btn.xml" value="0.3495" />
-        <entry key="..\:/Users/HPNRT/Desktop/rising_test/today-s_house_B_aos_manu/app/src/main/res/drawable/btm_homeservice_btn.xml" value="0.3495" />
-        <entry key="..\:/Users/HPNRT/Desktop/rising_test/today-s_house_B_aos_manu/app/src/main/res/drawable/btm_mypage_btn.xml" value="0.3495" />
-        <entry key="..\:/Users/HPNRT/Desktop/rising_test/today-s_house_B_aos_manu/app/src/main/res/drawable/btm_store_btn.xml" value="0.3495" />
-        <entry key="..\:/Users/HPNRT/Desktop/rising_test/today-s_house_B_aos_manu/app/src/main/res/drawable/btn_blue_bg.xml" value="0.3495" />
-        <entry key="..\:/Users/HPNRT/Desktop/rising_test/today-s_house_B_aos_manu/app/src/main/res/drawable/buying_bg.xml" value="0.3495" />
-        <entry key="..\:/Users/HPNRT/Desktop/rising_test/today-s_house_B_aos_manu/app/src/main/res/drawable/buying_frame_bg.xml" value="0.3495" />
-        <entry key="..\:/Users/HPNRT/Desktop/rising_test/today-s_house_B_aos_manu/app/src/main/res/drawable/deal_item_select.xml" value="0.3495" />
-        <entry key="..\:/Users/HPNRT/Desktop/rising_test/today-s_house_B_aos_manu/app/src/main/res/drawable/event_text_bg.xml" value="0.3495" />
-        <entry key="..\:/Users/HPNRT/Desktop/rising_test/today-s_house_B_aos_manu/app/src/main/res/drawable/gray_ellipse.xml" value="0.175" />
-        <entry key="..\:/Users/HPNRT/Desktop/rising_test/today-s_house_B_aos_manu/app/src/main/res/drawable/home_search_bg.xml" value="0.3495" />
-        <entry key="..\:/Users/HPNRT/Desktop/rising_test/today-s_house_B_aos_manu/app/src/main/res/drawable/ic_dot_white_selected.xml" value="0.3495" />
-        <entry key="..\:/Users/HPNRT/Desktop/rising_test/today-s_house_B_aos_manu/app/src/main/res/drawable/ic_dot_white_unselected.xml" value="0.3495" />
-        <entry key="..\:/Users/HPNRT/Desktop/rising_test/today-s_house_B_aos_manu/app/src/main/res/drawable/login_kakao_bg.xml" value="0.3495" />
-        <entry key="..\:/Users/HPNRT/Desktop/rising_test/today-s_house_B_aos_manu/app/src/main/res/drawable/my_page_firends_invite_event_bg.xml" value="0.3485" />
-        <entry key="..\:/Users/HPNRT/Desktop/rising_test/today-s_house_B_aos_manu/app/src/main/res/drawable/popluar_click_evnet_bg.xml" value="0.3485" />
-        <entry key="..\:/Users/HPNRT/Desktop/rising_test/today-s_house_B_aos_manu/app/src/main/res/drawable/product_count_bg.xml" value="0.3495" />
-        <entry key="..\:/Users/HPNRT/Desktop/rising_test/today-s_house_B_aos_manu/app/src/main/res/drawable/recommend_btn_bg.xml" value="0.3495" />
-        <entry key="..\:/Users/HPNRT/Desktop/rising_test/today-s_house_B_aos_manu/app/src/main/res/drawable/register_before_finish.xml" value="0.3485" />
-        <entry key="..\:/Users/HPNRT/Desktop/rising_test/today-s_house_B_aos_manu/app/src/main/res/drawable/selector_tab_white.xml" value="0.3495" />
-        <entry key="..\:/Users/HPNRT/Desktop/rising_test/today-s_house_B_aos_manu/app/src/main/res/drawable/sign_up_bg.xml" value="0.3495" />
-        <entry key="..\:/Users/HPNRT/Desktop/rising_test/today-s_house_B_aos_manu/app/src/main/res/drawable/sign_up_checkbox.xml" value="0.3495" />
-        <entry key="..\:/Users/HPNRT/Desktop/rising_test/today-s_house_B_aos_manu/app/src/main/res/drawable/sign_up_email_check_bg.xml" value="0.3455" />
-        <entry key="..\:/Users/HPNRT/Desktop/rising_test/today-s_house_B_aos_manu/app/src/main/res/drawable/tab_selector.xml" value="0.3485" />
-        <entry key="..\:/Users/HPNRT/Desktop/rising_test/today-s_house_B_aos_manu/app/src/main/res/drawable/today_deal_btm1.xml" value="0.3495" />
-        <entry key="..\:/Users/HPNRT/Desktop/rising_test/today-s_house_B_aos_manu/app/src/main/res/drawable/today_deal_btm2.xml" value="0.3495" />
-        <entry key="..\:/Users/HPNRT/Desktop/rising_test/today-s_house_B_aos_manu/app/src/main/res/drawable/today_deal_text_bg.xml" value="0.3495" />
-        <entry key="..\:/Users/HPNRT/Desktop/rising_test/today-s_house_B_aos_manu/app/src/main/res/layout/activity_cart_save.xml" value="0.34791666666666665" />
-        <entry key="..\:/Users/HPNRT/Desktop/rising_test/today-s_house_B_aos_manu/app/src/main/res/layout/activity_change_password.xml" value="0.34791666666666665" />
-        <entry key="..\:/Users/HPNRT/Desktop/rising_test/today-s_house_B_aos_manu/app/src/main/res/layout/activity_choose_product.xml" value="0.34791666666666665" />
-        <entry key="..\:/Users/HPNRT/Desktop/rising_test/today-s_house_B_aos_manu/app/src/main/res/layout/activity_event_detail.xml" value="0.33" />
-        <entry key="..\:/Users/HPNRT/Desktop/rising_test/today-s_house_B_aos_manu/app/src/main/res/layout/activity_event_page.xml" value="0.16927083333333334" />
-        <entry key="..\:/Users/HPNRT/Desktop/rising_test/today-s_house_B_aos_manu/app/src/main/res/layout/activity_event_pagectivity.xml" value="0.34791666666666665" />
-        <entry key="..\:/Users/HPNRT/Desktop/rising_test/today-s_house_B_aos_manu/app/src/main/res/layout/activity_login.xml" value="0.30480072463768115" />
-        <entry key="..\:/Users/HPNRT/Desktop/rising_test/today-s_house_B_aos_manu/app/src/main/res/layout/activity_main.xml" value="0.30480072463768115" />
-        <entry key="..\:/Users/HPNRT/Desktop/rising_test/today-s_house_B_aos_manu/app/src/main/res/layout/activity_product_detail.xml" value="0.30922930542340626" />
-        <entry key="..\:/Users/HPNRT/Desktop/rising_test/today-s_house_B_aos_manu/app/src/main/res/layout/activity_sign_in.xml" value="0.34791666666666665" />
-        <entry key="..\:/Users/HPNRT/Desktop/rising_test/today-s_house_B_aos_manu/app/src/main/res/layout/activity_sign_up.xml" value="0.30480072463768115" />
-        <entry key="..\:/Users/HPNRT/Desktop/rising_test/today-s_house_B_aos_manu/app/src/main/res/layout/activtiy_warngin_signup.xml" value="0.32518115942028986" />
-        <entry key="..\:/Users/HPNRT/Desktop/rising_test/today-s_house_B_aos_manu/app/src/main/res/layout/banner_event_view_img.xml" value="0.16822916666666668" />
-        <entry key="..\:/Users/HPNRT/Desktop/rising_test/today-s_house_B_aos_manu/app/src/main/res/layout/banner_event_view_item.xml" value="0.22" />
-        <entry key="..\:/Users/HPNRT/Desktop/rising_test/today-s_house_B_aos_manu/app/src/main/res/layout/cart_save_item.xml" value="0.2223731884057971" />
-        <entry key="..\:/Users/HPNRT/Desktop/rising_test/today-s_house_B_aos_manu/app/src/main/res/layout/choose_item_selected.xml" value="0.346875" />
-        <entry key="..\:/Users/HPNRT/Desktop/rising_test/today-s_house_B_aos_manu/app/src/main/res/layout/choose_option_item.xml" value="0.346875" />
-        <entry key="..\:/Users/HPNRT/Desktop/rising_test/today-s_house_B_aos_manu/app/src/main/res/layout/fragment_buying.xml" value="0.16927083333333334" />
-        <entry key="..\:/Users/HPNRT/Desktop/rising_test/today-s_house_B_aos_manu/app/src/main/res/layout/fragment_choose_product.xml" value="0.22" />
-        <entry key="..\:/Users/HPNRT/Desktop/rising_test/today-s_house_B_aos_manu/app/src/main/res/layout/fragment_deliver.xml" value="0.34791666666666665" />
-        <entry key="..\:/Users/HPNRT/Desktop/rising_test/today-s_house_B_aos_manu/app/src/main/res/layout/fragment_follow.xml" value="0.34791666666666665" />
-        <entry key="..\:/Users/HPNRT/Desktop/rising_test/today-s_house_B_aos_manu/app/src/main/res/layout/fragment_home.xml" value="0.25" />
-        <entry key="..\:/Users/HPNRT/Desktop/rising_test/today-s_house_B_aos_manu/app/src/main/res/layout/fragment_home_service.xml" value="0.34791666666666665" />
-        <entry key="..\:/Users/HPNRT/Desktop/rising_test/today-s_house_B_aos_manu/app/src/main/res/layout/fragment_homeragment.xml" value="0.34791666666666665" />
-        <entry key="..\:/Users/HPNRT/Desktop/rising_test/today-s_house_B_aos_manu/app/src/main/res/layout/fragment_knowledge.xml" value="0.34791666666666665" />
-        <entry key="..\:/Users/HPNRT/Desktop/rising_test/today-s_house_B_aos_manu/app/src/main/res/layout/fragment_my_page.xml" value="0.34791666666666665" />
-        <entry key="..\:/Users/HPNRT/Desktop/rising_test/today-s_house_B_aos_manu/app/src/main/res/layout/fragment_myshopping.xml" value="0.34791666666666665" />
-        <entry key="..\:/Users/HPNRT/Desktop/rising_test/today-s_house_B_aos_manu/app/src/main/res/layout/fragment_picture.xml" value="0.34791666666666665" />
-        <entry key="..\:/Users/HPNRT/Desktop/rising_test/today-s_house_B_aos_manu/app/src/main/res/layout/fragment_popluar.xml" value="0.25" />
-        <entry key="..\:/Users/HPNRT/Desktop/rising_test/today-s_house_B_aos_manu/app/src/main/res/layout/fragment_product_info.xml" value="0.16927083333333334" />
-        <entry key="..\:/Users/HPNRT/Desktop/rising_test/today-s_house_B_aos_manu/app/src/main/res/layout/fragment_profile.xml" value="0.34791666666666665" />
-        <entry key="..\:/Users/HPNRT/Desktop/rising_test/today-s_house_B_aos_manu/app/src/main/res/layout/fragment_q_and_a.xml" value="0.34791666666666665" />
-        <entry key="..\:/Users/HPNRT/Desktop/rising_test/today-s_house_B_aos_manu/app/src/main/res/layout/fragment_question.xml" value="0.2223731884057971" />
-        <entry key="..\:/Users/HPNRT/Desktop/rising_test/today-s_house_B_aos_manu/app/src/main/res/layout/fragment_review.xml" value="0.33" />
-        <entry key="..\:/Users/HPNRT/Desktop/rising_test/today-s_house_B_aos_manu/app/src/main/res/layout/fragment_store_home.xml" value="0.34791666666666665" />
-        <entry key="..\:/Users/HPNRT/Desktop/rising_test/today-s_house_B_aos_manu/app/src/main/res/layout/home_recycler_item.xml" value="0.346875" />
-        <entry key="..\:/Users/HPNRT/Desktop/rising_test/today-s_house_B_aos_manu/app/src/main/res/layout/ic_dot_white_unselected.xml" value="0.34791666666666665" />
-        <entry key="..\:/Users/HPNRT/Desktop/rising_test/today-s_house_B_aos_manu/app/src/main/res/layout/popluar_banner_item.xml" value="0.346875" />
-        <entry key="..\:/Users/HPNRT/Desktop/rising_test/today-s_house_B_aos_manu/app/src/main/res/layout/popluar_grid_click_item.xml" value="0.25" />
-        <entry key="..\:/Users/HPNRT/Desktop/rising_test/today-s_house_B_aos_manu/app/src/main/res/layout/product_detail_viewpager.xml" value="0.2223731884057971" />
-        <entry key="..\:/Users/HPNRT/Desktop/rising_test/today-s_house_B_aos_manu/app/src/main/res/layout/review_recycler_item.xml" value="0.33" />
-        <entry key="..\:/Users/HPNRT/Desktop/rising_test/today-s_house_B_aos_manu/app/src/main/res/layout/review_viewpager_item.xml" value="0.346875" />
-        <entry key="..\:/Users/HPNRT/Desktop/rising_test/today-s_house_B_aos_manu/app/src/main/res/layout/store_home_banner_item.xml" value="0.346875" />
-        <entry key="..\:/Users/HPNRT/Desktop/rising_test/today-s_house_B_aos_manu/app/src/main/res/layout/store_home_catgory_find_item.xml" value="0.346875" />
-        <entry key="..\:/Users/HPNRT/Desktop/rising_test/today-s_house_B_aos_manu/app/src/main/res/layout/today_deal_item.xml" value="0.34791666666666665" />
-        <entry key="..\:/Users/HPNRT/Desktop/rising_test/today-s_house_B_aos_manu/app/src/main/res/menu/btm_navi_item.xml" value="0.34791666666666665" />
+        <entry key="..\:/dev/TodayHouse/app/src/main/res/drawable/banner_bg.xml" value="0.3405" />
+        <entry key="..\:/dev/TodayHouse/app/src/main/res/drawable/brand_detail_bg.xml" value="0.356" />
+        <entry key="..\:/dev/TodayHouse/app/src/main/res/drawable/btm_mypage_btn.xml" value="0.259" />
+        <entry key="..\:/dev/TodayHouse/app/src/main/res/drawable/btn_blue_bg.xml" value="0.3405" />
+        <entry key="..\:/dev/TodayHouse/app/src/main/res/drawable/category_all_bg.xml" value="0.356" />
+        <entry key="..\:/dev/TodayHouse/app/src/main/res/drawable/check_box_divide.xml" value="0.3405" />
+        <entry key="..\:/dev/TodayHouse/app/src/main/res/drawable/cupon_choice_bg.xml" value="0.345" />
+        <entry key="..\:/dev/TodayHouse/app/src/main/res/drawable/deal_item_select.xml" value="0.259" />
+        <entry key="..\:/dev/TodayHouse/app/src/main/res/drawable/gray_ellipse.xml" value="0.147" />
         <entry key="..\:/dev/TodayHouse/app/src/main/res/drawable/login_apple_bg.xml" value="0.2445" />
         <entry key="..\:/dev/TodayHouse/app/src/main/res/drawable/login_banner_bg.xml" value="0.2445" />
         <entry key="..\:/dev/TodayHouse/app/src/main/res/drawable/login_banner_tail_bg.xml" value="0.2445" />
         <entry key="..\:/dev/TodayHouse/app/src/main/res/drawable/login_facebook_bg.xml" value="0.2445" />
         <entry key="..\:/dev/TodayHouse/app/src/main/res/drawable/login_kakao_bg.xml" value="0.2445" />
         <entry key="..\:/dev/TodayHouse/app/src/main/res/drawable/login_naver_bg.xml" value="0.2445" />
+        <entry key="..\:/dev/TodayHouse/app/src/main/res/drawable/sign_up_bg.xml" value="0.196" />
+        <entry key="..\:/dev/TodayHouse/app/src/main/res/drawable/sign_up_checkbox.xml" value="0.3405" />
+        <entry key="..\:/dev/TodayHouse/app/src/main/res/drawable/sign_up_email_check_bg.xml" value="0.196" />
+        <entry key="..\:/dev/TodayHouse/app/src/main/res/drawable/today_deal_text_bg.xml" value="0.258" />
+        <entry key="..\:/dev/TodayHouse/app/src/main/res/layout/activity_cart_save.xml" value="0.36614583333333334" />
+        <entry key="..\:/dev/TodayHouse/app/src/main/res/layout/activity_catgory.xml" value="0.3515625" />
+        <entry key="..\:/dev/TodayHouse/app/src/main/res/layout/activity_change_password.xml" value="0.36614583333333334" />
+        <entry key="..\:/dev/TodayHouse/app/src/main/res/layout/activity_cupon.xml" value="0.30055579307396324" />
+        <entry key="..\:/dev/TodayHouse/app/src/main/res/layout/activity_event_detail.xml" value="0.30055579307396324" />
+        <entry key="..\:/dev/TodayHouse/app/src/main/res/layout/activity_event_page.xml" value="0.36614583333333334" />
         <entry key="..\:/dev/TodayHouse/app/src/main/res/layout/activity_login.xml" value="0.2" />
         <entry key="..\:/dev/TodayHouse/app/src/main/res/layout/activity_main.xml" value="0.2" />
-        <entry key="..\:/dev/TodayHouse/app/src/main/res/layout/activity_sign_up.xml" value="0.176" />
+        <entry key="..\:/dev/TodayHouse/app/src/main/res/layout/activity_product_detail.xml" value="0.264" />
+        <entry key="..\:/dev/TodayHouse/app/src/main/res/layout/activity_re_password.xml" value="0.18802083333333333" />
+        <entry key="..\:/dev/TodayHouse/app/src/main/res/layout/activity_review.xml" value="0.264" />
+        <entry key="..\:/dev/TodayHouse/app/src/main/res/layout/activity_scarp.xml" value="0.15433946130825138" />
+        <entry key="..\:/dev/TodayHouse/app/src/main/res/layout/activity_sign_in.xml" value="0.18802083333333333" />
+        <entry key="..\:/dev/TodayHouse/app/src/main/res/layout/activity_sign_up.xml" value="0.264" />
         <entry key="..\:/dev/TodayHouse/app/src/main/res/layout/activity_splash.xml" value="0.25364583333333335" />
+        <entry key="..\:/dev/TodayHouse/app/src/main/res/layout/activity_test.xml" value="0.18802083333333333" />
+        <entry key="..\:/dev/TodayHouse/app/src/main/res/layout/cart_save_item.xml" value="0.30055579307396324" />
+        <entry key="..\:/dev/TodayHouse/app/src/main/res/layout/choose_option_item.xml" value="0.30055579307396324" />
+        <entry key="..\:/dev/TodayHouse/app/src/main/res/layout/fragment_choose_product.xml" value="0.15433946130825138" />
+        <entry key="..\:/dev/TodayHouse/app/src/main/res/layout/fragment_follow.xml" value="0.36614583333333334" />
+        <entry key="..\:/dev/TodayHouse/app/src/main/res/layout/fragment_home.xml" value="0.36614583333333334" />
         <entry key="..\:/dev/TodayHouse/app/src/main/res/layout/fragment_home_service.xml" value="0.25364583333333335" />
         <entry key="..\:/dev/TodayHouse/app/src/main/res/layout/fragment_my_page.xml" value="0.25364583333333335" />
+        <entry key="..\:/dev/TodayHouse/app/src/main/res/layout/fragment_myshopping.xml" value="0.264" />
         <entry key="..\:/dev/TodayHouse/app/src/main/res/layout/fragment_plus.xml" value="0.25364583333333335" />
+        <entry key="..\:/dev/TodayHouse/app/src/main/res/layout/fragment_popluar.xml" value="0.25364583333333335" />
         <entry key="..\:/dev/TodayHouse/app/src/main/res/layout/fragment_store.xml" value="0.25364583333333335" />
+        <entry key="..\:/dev/TodayHouse/app/src/main/res/layout/fragment_store_home.xml" value="0.25364583333333335" />
+        <entry key="..\:/dev/TodayHouse/app/src/main/res/layout/get_cupon_item.xml" value="0.2997007268063275" />
+        <entry key="..\:/dev/TodayHouse/app/src/main/res/layout/popluar_banner_item.xml" value="0.25364583333333335" />
+        <entry key="..\:/dev/TodayHouse/app/src/main/res/layout/popluar_grid_click_item.xml" value="0.1125" />
+        <entry key="..\:/dev/TodayHouse/app/src/main/res/layout/review_recycler_item.xml" value="0.30055579307396324" />
+        <entry key="..\:/dev/TodayHouse/app/src/main/res/layout/store_home_banner_item.xml" value="0.1125" />
+        <entry key="..\:/dev/TodayHouse/app/src/main/res/layout/store_home_category_item.xml" value="0.264" />
+        <entry key="..\:/dev/TodayHouse/app/src/main/res/layout/today_deal_item.xml" value="0.264" />
         <entry key="..\:/dev/TodayHouse/app/src/main/res/menu/btm_navi_item.xml" value="0.1125" />
       </map>
     </option>
@@ -101,12 +66,5 @@
   </component>
   <component name="ProjectType">
     <option name="id" value="Android" />
-  </component>
-  <component name="VisualizationToolProject">
-    <option name="state">
-      <ProjectState>
-        <option name="scale" value="0.1" />
-      </ProjectState>
-    </option>
   </component>
 </project>

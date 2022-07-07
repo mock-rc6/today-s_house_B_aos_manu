@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".src.main.mypage.myshopping.cupon.CuponActivity">
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@+id/cupon_title_container"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/register_cupon_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="쿠폰등록"
+                android:textSize="18dp"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                android:layout_marginTop="25dp"
+                android:layout_marginLeft="15dp"
+                android:textColor="@color/black"
+                android:textStyle="bold"/>
+
+            <EditText
+                android:id="@+id/register_cupon"
+                android:layout_width="280dp"
+                android:layout_height="60dp"
+                android:background="@drawable/sign_up_bg"
+                app:layout_constraintTop_toBottomOf="@id/register_cupon_text"
+                app:layout_constraintStart_toStartOf="@+id/register_cupon_text"
+                android:layout_marginTop="2dp"
+                android:inputType="text"
+                android:hint="쿠폰코드를 입력해주세요"
+                android:textSize="14dp"
+                android:textColor="@color/black"
+                android:paddingLeft="15dp"/>
+
+            <Button
+                android:id="@+id/register_cupon_btn"
+                android:layout_width="100dp"
+                android:layout_height="60dp"
+                app:layout_constraintStart_toEndOf="@id/register_cupon"
+                app:layout_constraintTop_toTopOf="@id/register_cupon"
+                android:layout_marginLeft="8dp"
+                android:background="@drawable/btn_blue_bg"
+                android:text="등록"
+                android:textColor="@color/white"
+                android:textSize="19dp"/>
+
+            <View
+                android:id="@+id/divde_cupon"
+                android:layout_width="370dp"
+                android:layout_height="1dp"
+                android:background="@color/light_grey"
+                app:layout_constraintTop_toBottomOf="@id/register_cupon"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:layout_marginTop="20dp"/>
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:paddingLeft="15dp"
+                android:id="@+id/get_cupon_recycler"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toBottomOf="@+id/divde_cupon"
+                android:layout_marginTop="20dp"
+                android:orientation="vertical"/>
+
+            <View
+                android:id="@+id/divde_cupon2"
+                android:layout_width="370dp"
+                android:layout_height="1dp"
+                android:background="@color/light_grey"
+                app:layout_constraintTop_toBottomOf="@id/get_cupon_recycler"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:layout_marginTop="20dp"/>
+
+
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+
+    </androidx.core.widget.NestedScrollView>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/cupon_title_container"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:background="@color/white"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <TextView
+            android:id="@+id/event_detail_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="쿠폰"
+            android:textSize="18dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            android:textColor="@color/black"
+            android:textStyle="bold"/>
+
+        <ImageView
+            android:id="@+id/cupon_back"
+            android:layout_width="25dp"
+            android:layout_height="25dp"
+            android:src="@drawable/sign_up_back_arrow"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            android:layout_marginLeft="18dp"/>
+
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

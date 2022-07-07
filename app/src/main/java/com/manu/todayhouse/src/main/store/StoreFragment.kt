@@ -1,5 +1,6 @@
 package com.manu.todayhouse.src.main.store
 
+import android.content.Intent
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
@@ -11,6 +12,7 @@ import com.manu.todayhouse.R
 import com.manu.todayhouse.config.BaseFragment
 import com.manu.todayhouse.databinding.FragmentStoreBinding
 import com.manu.todayhouse.src.main.home.HomeFragmentAdapter
+import com.manu.todayhouse.src.main.mypage.cart.CartSaveActivity
 
 
 class StoreFragment : BaseFragment<FragmentStoreBinding>(FragmentStoreBinding::bind, R.layout.fragment_store) {
@@ -26,5 +28,10 @@ class StoreFragment : BaseFragment<FragmentStoreBinding>(FragmentStoreBinding::b
         val tabTitleLists = listOf<String>("스토어홈", "베스트", "오늘의딜", "7월한정특가", "주말반짝세일", "빠른배송", "오!굿즈", "프리미엄", "기획전")
 
         TabLayoutMediator(storeTabLayout, storeConnect, {tab, poisition -> tab.text = tabTitleLists[poisition]}).attach()
+
+        binding.storeCartBtn.setOnClickListener {
+            val intent = Intent(context, CartSaveActivity::class.java)
+            startActivity(intent)
+        }
     }
 }
