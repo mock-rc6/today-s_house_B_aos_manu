@@ -61,10 +61,20 @@
 4. 상품상세페이지 UI 및 API 연동 완료
 5. KaKaoLogin API 연결시 Error 수정중
 
-#7/6
+#7/6일 개발일지
 1. 구매하기 로직 오류 수정 완
 2. 비밀번호 변경 API 코드 수정 완
 3. 상품상세페이지 UI 개선, 구매창 UI 빌드
 4. 장바구니 POST API 빌드
 5. 장바구니 UI 빌드 완
+
+#7/7일 개발일지
+1. 제품 선택 로직 Finish
+2. 장바구니 API 연결 완
+3. Review화면 UI 완성
+4. 마이페이지 UI 수정 완료
+5. Cupon UI 구상 완료
+6. Cupon Get Post API 구현 완료
+7. 내가 작성한 Review GET API 연결 완료
+8. 내가 작성한 리뷰 UI 구상 완
 
