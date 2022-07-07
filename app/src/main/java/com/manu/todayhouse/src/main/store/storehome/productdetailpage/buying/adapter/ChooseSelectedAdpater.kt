@@ -30,12 +30,14 @@ class ChooseSelectedAdpater(val selectedList : List<ResultX>) : RecyclerView.Ada
 
             productCount.text = count.toString()
             titleSelected.text = selectedLists.optionName
-            priceSleected.text = selectedLists.saledPrice + "원"
+            priceSleected.text = (selectedLists.saledPrice * count).toString() + "원"
 
             countPlus.setOnClickListener {
-                count += 1
-                productCount.text = count.toString()
-//                priceSleected.text = (selectedLists.saledPrice.toInt() * count).toString() + "원"
+                    count += 1
+                    productCount.text = count.toString()
+                    priceSleected.text = (selectedLists.saledPrice * count).toString() + "원"
+
+
             }
 
             countMinus.setOnClickListener {
@@ -44,7 +46,7 @@ class ChooseSelectedAdpater(val selectedList : List<ResultX>) : RecyclerView.Ada
                     productCount.text = count.toString()
                 }
 
-//                priceSleected.text = (selectedLists.saledPrice.toInt() * count).toString() + "원"
+                priceSleected.text = (selectedLists.saledPrice.toInt() * count).toString() + "원"
             }
 
 

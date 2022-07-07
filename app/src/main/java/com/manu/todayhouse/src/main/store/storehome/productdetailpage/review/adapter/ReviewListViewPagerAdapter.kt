@@ -16,6 +16,7 @@ class ReviewListViewPagerAdapter(val reviewList : List<Review>) : RecyclerView.A
         val imgLists = itemView.findViewById<ImageView>(R.id.review_img_lists)
 
         fun onBindWith(reviewLists : Review) {
+            imgLists.clipToOutline = true
             Glide.with(itemView).load(reviewLists.img).into(imgLists)
         }
     }

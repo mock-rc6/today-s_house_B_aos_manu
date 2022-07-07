@@ -2,6 +2,8 @@ package com.manu.todayhouse.src.main.store.storehome.productdetailpage.review
 
 import android.os.Bundle
 import android.view.View
+import android.widget.TextView
+import androidx.recyclerview.widget.RecyclerView
 import androidx.viewpager2.widget.ViewPager2
 import com.manu.todayhouse.R
 import com.manu.todayhouse.config.BaseFragment
@@ -21,9 +23,9 @@ class ReviewFragment : BaseFragment<FragmentReviewBinding>(FragmentReviewBinding
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        binding.goToReviewpage.setOnClickListener {
-
-        }
+//        binding.goToReviewpage.setOnClickListener {
+//
+//        }
         ProductDetailService(this@ReviewFragment).getProductDetail()
     }
 
@@ -33,18 +35,18 @@ class ReviewFragment : BaseFragment<FragmentReviewBinding>(FragmentReviewBinding
         reviewListViewPagerAdapter = ReviewListViewPagerAdapter(reviewReslut)
         reviewRecyclerAdapter = ReviewRecyclerAdapter(reviewReslut)
 
-        val viewPagerTest = view?.findViewById<ViewPager2>(R.id.review_img_list_viewpager)
-//
-//        binding.reviewCount.text = response.result.reviewCnt.toString()
+        val viewPagerTest = view?.findViewById<RecyclerView>(R.id.review_img_list_viewpager)
+        val viewRecyclerList = view?.findViewById<RecyclerView>(R.id.review_recycler_list)
+
+        view?.findViewById<TextView>(R.id.review_count)?.text = response.result.reviewCnt.toString()
 
         viewPagerTest?.apply {
             adapter = reviewListViewPagerAdapter
-            orientation = ViewPager2.ORIENTATION_HORIZONTAL
         }
 
-//        binding.reviewRecyclerList.apply {
-//            adapter = reviewRecyclerAdapter
-//        }
+        viewRecyclerList?.apply {
+            adapter = reviewRecyclerAdapter
+        }
     }
 
     override fun getProductDetailFail(message: String) {

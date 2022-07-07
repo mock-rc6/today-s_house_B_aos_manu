@@ -5,7 +5,7 @@ data class ResultX(
     val optionId: Long,
     val optionName: String,
     val saleRate: String,
-    val saledPrice: String,
+    val saledPrice: Int,
     val specialPrice: String,
     val thumbnail: String
 )

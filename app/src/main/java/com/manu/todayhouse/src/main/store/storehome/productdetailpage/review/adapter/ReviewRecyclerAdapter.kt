@@ -27,7 +27,7 @@ class ReviewRecyclerAdapter(private val reviewScriptList : List<Review>) : Recyc
         val reviewSrcipt = itemView.findViewById<TextView>(R.id.review_srcipt)
 
         fun onBindWiht(reviewScriptLists : Review){
-            Glide.with(itemView).load(reviewScriptLists.profilePic).centerCrop().into(userImg)
+            Glide.with(itemView).load(reviewScriptLists.profilePic).override(300,300).circleCrop().into(userImg)
             userNickname.text = reviewScriptLists.userName
             if (reviewScriptLists.score >= 5.0){
                 userstar1.setImageResource(R.drawable.review_start_img)

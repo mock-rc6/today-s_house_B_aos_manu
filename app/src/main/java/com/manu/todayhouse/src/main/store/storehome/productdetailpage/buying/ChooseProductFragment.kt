@@ -4,6 +4,8 @@ import android.content.Intent
 import android.os.Bundle
 import android.util.Log
 import android.view.View
+import android.widget.ImageView
+import android.widget.TextView
 import com.bumptech.glide.Glide
 import com.manu.todayhouse.R
 import com.manu.todayhouse.config.ApplicationClass
@@ -65,7 +67,7 @@ class ChooseProductFragment : BaseFragment<FragmentChooseProductBinding>(Fragmen
             startActivity(intent)
         }
 
-        cartAddHash["optionId"] = ApplicationClass.sSharedPreferences.getLong("optionId", 1)
+        cartAddHash["optionId"] = ApplicationClass.sSharedPreferences.getLong("optionId", 6)
         cartAddHash["number"] = 1
 
         binding.addCart.setOnClickListener {
@@ -80,7 +82,7 @@ class ChooseProductFragment : BaseFragment<FragmentChooseProductBinding>(Fragmen
                     override fun onResponse(call: Call<CardAdd>, response: Response<CardAdd>) {
                         if (response.isSuccessful){
                             val result = response.body()
-
+                            showCustomToast("${result?.message}")
                         }
                     }
 
@@ -123,7 +125,7 @@ class ChooseProductFragment : BaseFragment<FragmentChooseProductBinding>(Fragmen
         chooseOptionAdapter.setOnItemClickListener(
             object : ChooseOptionAdapter.onItemClickListener{
                 override fun onItemClick(v: View, data: ResultX, pos: Int) {
-                    binding.allPrice.text = result[pos].saledPrice + "원"
+                    binding.allPrice.text = data.saledPrice.toString() + "원"
                     optionItem.visibility = View.GONE
                     binding.optionNameChoose.visibility = View.VISIBLE
                     binding.chooseDiscountPercentChoose.visibility = View.VISIBLE
@@ -135,7 +137,7 @@ class ChooseProductFragment : BaseFragment<FragmentChooseProductBinding>(Fragmen
 
                     binding.optionNameChoose.text = data.optionName
                     binding.chooseDiscountPercentChoose.text = data.saleRate
-                    binding.productPriceChoose.text = data.saledPrice
+                    binding.productPriceChoose.text = data.saledPrice.toString()
                     binding.freeDeliveryChooseProduct.text = data.delivery
                     binding.dealPriceChoose.text = data.specialPrice
 
@@ -156,6 +158,26 @@ class ChooseProductFragment : BaseFragment<FragmentChooseProductBinding>(Fragmen
                     chooseSelectedAdpater.setOnItemClickListener(
                         object : ChooseSelectedAdpater.onItemClickListener{
                             override fun onItemClick(v: View, data: ResultX, pos: Int) {
+                                var counts : Int = 1
+                                val price = v.findViewById<TextView>(R.id.option_cart_price_selected)
+                                val priceCount = v.findViewById<TextView>(R.id.product_count)
+                                v.findViewById<ImageView>(R.id.count_plus_btn).setOnClickListener {
+                                    counts += 1
+                                    priceCount.text = counts.toString()
+                                    price.text = (data.saledPrice * counts).toString() + "원"
+                                    binding.allPrice.text = price.text
+                                }
+
+                                v.findViewById<ImageView>(R.id.count_minus_btn).setOnClickListener {
+                                    if (counts != 0){
+                                        counts -= 1
+                                        priceCount.text = counts.toString()
+                                        price.text = (data.saledPrice * counts).toString() + "원"
+                                        binding.allPrice.text = price.text
+                                    }
+                                }
+
+
 
                             }
 

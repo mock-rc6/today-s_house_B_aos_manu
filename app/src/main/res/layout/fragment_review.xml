@@ -2,7 +2,7 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:layout_height="wrap_content"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".src.main.store.storehome.productdetailpage.review.ReviewFragment">
 
@@ -311,11 +311,12 @@
             app:layout_constraintEnd_toEndOf="parent"
             android:background="@color/much_light_grey"/>
 
-        <androidx.viewpager2.widget.ViewPager2
+        <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/review_img_list_viewpager"
             android:layout_width="match_parent"
             android:layout_height="100dp"
             android:orientation="horizontal"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
             android:overScrollMode="never"
             app:layout_constraintTop_toBottomOf="@+id/review_container"
             app:layout_constraintStart_toStartOf="parent"

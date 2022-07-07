@@ -445,6 +445,8 @@
                 app:layout_constraintTop_toBottomOf="@+id/first_picture"
                 android:orientation="horizontal"
                 app:tabSelectedTextColor="@color/today_house_color"
+                android:overScrollMode="never"
+                app:tabMode="scrollable"
                 app:tabTextColor="@color/black"
                 android:background="@color/white"
                 app:tabIndicatorColor="@color/today_house_color"
@@ -462,6 +464,9 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="vertical"
+                android:clipChildren="false"
+                android:clipToPadding="false"
+                android:clipToOutline="true"
                 app:layout_constraintTop_toBottomOf="@+id/detail_tab_layout"
                 android:overScrollMode="never"/>
 

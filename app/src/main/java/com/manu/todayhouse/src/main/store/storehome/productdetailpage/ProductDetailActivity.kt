@@ -2,7 +2,10 @@ package com.manu.todayhouse.src.main.store.storehome.productdetailpage
 
 import android.os.Bundle
 import android.util.Log
+import android.view.View
+import androidx.core.view.get
 import androidx.fragment.app.FragmentActivity
+import androidx.recyclerview.widget.RecyclerView
 import androidx.viewpager2.widget.ViewPager2
 import com.google.android.material.tabs.TabLayoutMediator
 import com.manu.todayhouse.R
@@ -60,9 +63,10 @@ class ProductDetailActivity : BaseActivity<ActivityProductDetailBinding>(Activit
                                 super.onPageSelected(position)
                                 binding.textViewCurrentBanner.text = "${position + 1}"
                                 binding.textViewTotalBanner.text = "${result.imgList.size}"
-                            }
-                        })
 
+                        }
+
+                    })
                     }
 
                     val productTitle = binding.productDetailTitle
@@ -74,6 +78,11 @@ class ProductDetailActivity : BaseActivity<ActivityProductDetailBinding>(Activit
                     val scrapCount = binding.scrapCount
                     val brandName = binding.brandName
                     val pointPlus = binding.pointPlusCount
+                    val firstStar = binding.firstStarUn
+                    val secondStar = binding.secondStarUn
+                    val threeStar = binding.thirdStarUn
+                    val fourStar = binding.fourthStarUn
+                    val fiveStar = binding.fifthStarUn
 
 
                     productTitle.text = result.itemName
@@ -85,6 +94,51 @@ class ProductDetailActivity : BaseActivity<ActivityProductDetailBinding>(Activit
                     reviewCount.text = "(" + result.reviewCnt.toString() + ")"
                     brandName.text = result.companyName
 //                    pointPlus.text = (result.price.toInt()/1000*3).toString()
+
+                    if (result.score >= 5.0){
+                        firstStar.setImageResource(R.drawable.review_start_img)
+                        secondStar.setImageResource(R.drawable.review_start_img)
+                        threeStar.setImageResource(R.drawable.review_start_img)
+                        fourStar.setImageResource(R.drawable.review_start_img)
+                        fiveStar.setImageResource(R.drawable.review_start_img)
+                    } else if (result.score >= 4.5){
+                        firstStar.setImageResource(R.drawable.review_start_img)
+                        secondStar.setImageResource(R.drawable.review_start_img)
+                        threeStar.setImageResource(R.drawable.review_start_img)
+                        fourStar.setImageResource(R.drawable.review_start_img)
+                        fiveStar.setImageResource(R.drawable.half_star_img)
+                    } else if (result.score >= 4.0) {
+                        firstStar.setImageResource(R.drawable.review_start_img)
+                        secondStar.setImageResource(R.drawable.review_start_img)
+                        threeStar.setImageResource(R.drawable.review_start_img)
+                        fourStar.setImageResource(R.drawable.review_start_img)
+                    } else if (result.score >= 3.5) {
+                        firstStar.setImageResource(R.drawable.review_start_img)
+                        secondStar.setImageResource(R.drawable.review_start_img)
+                        threeStar.setImageResource(R.drawable.review_start_img)
+                        fourStar.setImageResource(R.drawable.half_star_img)
+                    } else if (result.score >= 3.0) {
+                        firstStar.setImageResource(R.drawable.review_start_img)
+                        secondStar.setImageResource(R.drawable.review_start_img)
+                        threeStar.setImageResource(R.drawable.review_start_img)
+                    } else if (result.score >= 2.5){
+                        firstStar.setImageResource(R.drawable.review_start_img)
+                        secondStar.setImageResource(R.drawable.review_start_img)
+                        threeStar.setImageResource(R.drawable.half_star_img)
+                    }
+
+                    else if (result.score >= 2.0) {
+                        firstStar.setImageResource(R.drawable.review_start_img)
+                        secondStar.setImageResource(R.drawable.review_start_img)
+                    }
+                    else if (result.score >= 1.5) {
+                        firstStar.setImageResource(R.drawable.review_start_img)
+                        secondStar.setImageResource(R.drawable.half_star_img)
+                    } else if (result.score >= 1.0) {
+                        firstStar.setImageResource(R.drawable.review_start_img)
+                    } else if (result.score >= 0.5) {
+                        firstStar.setImageResource(R.drawable.half_star_img)
+                    }
 
 
 
@@ -101,7 +155,29 @@ class ProductDetailActivity : BaseActivity<ActivityProductDetailBinding>(Activit
 
 
         val productDetailViewAdapter = ProductDetailViewAdapter(this as FragmentActivity)
-        detailViewPager.adapter = productDetailViewAdapter
+
+        detailViewPager.apply {
+            adapter = productDetailViewAdapter
+//            registerOnPageChangeCallback(object : ViewPager2.OnPageChangeCallback() {
+//                override fun onPageSelected(position: Int) {
+//                    super.onPageSelected(position)
+//                    // viewPager
+//                    val view = (detailViewPager[0] as RecyclerView).layoutManager?.findViewByPosition(position)
+//                    view?.post {
+//                        val wMeasureSpec =
+//                            View.MeasureSpec.makeMeasureSpec(view.width, View.MeasureSpec.EXACTLY)
+//                        val hMeasureSpec = View.MeasureSpec.makeMeasureSpec(0, View.MeasureSpec.UNSPECIFIED)
+//                        view.measure(wMeasureSpec, hMeasureSpec)
+//                        if (detailViewPager.layoutParams.height != view.measuredHeight) {
+//                            detailViewPager.layoutParams = (detailViewPager.layoutParams).also { lp ->
+//                                lp.height = view.measuredHeight
+//                            }
+//                        }
+//                    }
+//                }
+//            })
+        }
+
 
         val productTabTitleList = listOf<String>("상품정보", "리뷰", "문의", "배송/환불", "추천")
 

@@ -32,7 +32,7 @@ class ChooseOptionAdapter(val chooseList : List<ResultX>) : RecyclerView.Adapter
             Glide.with(itemView.context).load(chooseLists.thumbnail).into(optionThunmail)
             optionName.text = chooseLists.optionName
             percent.text = chooseLists.saleRate
-            price.text = chooseLists.saledPrice
+            price.text = chooseLists.saledPrice.toString()
             delivery.text = chooseLists.delivery
             deal.text = chooseLists.specialPrice
 
